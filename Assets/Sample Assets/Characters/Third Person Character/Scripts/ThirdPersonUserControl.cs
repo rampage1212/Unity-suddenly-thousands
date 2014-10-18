@@ -75,10 +75,18 @@ public class ThirdPersonUserControl : MonoBehaviour
 
         // get the third person character ( this should never be null due to require component )
 		character = GetComponent<ThirdPersonCharacter>();
-		character.ScaleCapsuleForCrouching(true);
-
-		// Add this character to the controls
-		MouseOrbitImproved.instance.allLivingCharacters.Add(this);
+        if(MouseOrbitImproved.instance != null)
+        {
+            character.ScaleCapsuleForCrouching(true);
+            
+            // Add this character to the controls
+            MouseOrbitImproved.instance.allLivingCharacters.Add(this);
+        }
+        else
+        {
+            state = State.Active;
+            character.indicator = ThirdPersonCharacter.Indicator.Active;
+        }
 	}
 
 	// Fixed update is called in sync with physics
@@ -88,7 +96,7 @@ public class ThirdPersonUserControl : MonoBehaviour
         lookPos = transform.position + transform.forward * 100;
         bool jump = false;
         bool crouching = true;
-		if(currentState == State.Active)
+        if((MouseOrbitImproved.instance != null) && (currentState == State.Active))
 		{
             crouching = false;
 			#if CROSS_PLATFORM_INPUT
@@ -121,8 +129,11 @@ public class ThirdPersonUserControl : MonoBehaviour
 			float walkMultiplier = (walkByDefault ? walkToggle ? 1 : 0.5f : walkToggle ? 0.5f : 1);
 			move *= walkMultiplier;
 			#endif
-
 		}
+        else if(MouseOrbitImproved.instance == null)
+        {
+            crouching = false;
+        }
 
         // pass all parameters to the character control script
         character.Move( move, crouching, jump, lookPos );

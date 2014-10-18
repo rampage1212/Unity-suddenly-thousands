@@ -65,7 +65,7 @@ public class SceneTransition : ISingletonScript
 	
 	public void LoadLevel(int levelIndex)
 	{
-		if((State == Transition.NotTransitioning) && (levelIndex > 0) && (levelIndex <= (GameSettings.NumLevels + 1)))
+		if((State == Transition.NotTransitioning) && (levelIndex >= 0) && (levelIndex <= GameSettings.NumLevels))
 		{
 			// Play sound
 			audio.Play();
@@ -138,16 +138,7 @@ public class SceneTransition : ISingletonScript
 
 		// Check if we're in a webplayer
 		GameSettings settings = Singleton.Get<GameSettings>();
-		if (settings.IsWebplayer == true)
-		{
-			// If so, load the loading scene
-			Application.LoadLevelAsync(0);
-		}
-		else
-		{
-			// If not, directly load to the next level
-			Application.LoadLevelAsync(mNextLevel);
-		}
+		Application.LoadLevelAsync(mNextLevel);
 	}
 	
 	IEnumerator FadeOut()

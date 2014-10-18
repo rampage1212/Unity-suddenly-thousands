@@ -51,12 +51,16 @@ public class MouseOrbitImproved : MonoBehaviour
         {
             return instance.state;
         }
-        private set
+        set
         {
             if(instance.state != value)
             {
                 instance.state = value;
                 Screen.lockCursor = (instance.state == State.Playing);
+                if(instance.state == State.Paused)
+                {
+                    Time.timeScale = 0;
+                }
             }
         }
     }
@@ -86,6 +90,10 @@ public class MouseOrbitImproved : MonoBehaviour
     {
         if((target) && (CurrentState == State.Playing))
         {
+            if(Input.GetButton("Pause"))
+            {
+                CurrentState = State.Paused;
+            }
 			if(target.state == ThirdPersonUserControl.State.Standby)
 			{
 				Setup ();

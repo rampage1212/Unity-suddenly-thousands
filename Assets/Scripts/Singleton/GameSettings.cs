@@ -3,8 +3,8 @@ using System.Collections;
 
 public class GameSettings : ISingletonScript
 {
-	public const int MenuLevel = 1;
-	public const int NumLevels = 11;
+	public const int MenuLevel = 0;
+	public const int NumLevels = 1;
 	
 	public const string NumLevelsUnlockedKey = "numLevelsUnlocked";
 

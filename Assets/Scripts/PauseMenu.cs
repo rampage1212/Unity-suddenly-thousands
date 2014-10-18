@@ -204,6 +204,7 @@ public class PauseMenu : MonoBehaviour
             {
                 Time.timeScale = 1;
                 Screen.lockCursor = true;
+                MouseOrbitImproved.CurrentState = MouseOrbitImproved.State.Playing;
             }
         }
 	}
