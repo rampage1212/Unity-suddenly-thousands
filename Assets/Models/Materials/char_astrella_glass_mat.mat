@@ -29,16 +29,16 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _Cube
+          name: _MatCap
         second:
-          m_Texture: {fileID: 8900000, guid: 9c45003dc05b3f44eb34c04bec8173b0, type: 2}
+          m_Texture: {fileID: 2800000, guid: 2034f6656393e9a4a811b48a45f12ddc, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _MatCap
+          name: _Cube
         second:
-          m_Texture: {fileID: 2800000, guid: 8320987374e1fb544879fc552b145948, type: 3}
+          m_Texture: {fileID: 8900000, guid: 9c45003dc05b3f44eb34c04bec8173b0, type: 2}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:

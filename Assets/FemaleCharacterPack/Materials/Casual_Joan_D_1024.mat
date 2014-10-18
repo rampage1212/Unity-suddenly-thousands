@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Casual_Joan_D_1024
-  m_Shader: {fileID: 4800000, guid: 0b4002bddac1f2e4585ed70d2f0d218b, type: 3}
+  m_Shader: {fileID: 4800000, guid: 4a6aba8ad13e9704687a790b59eaf008, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -54,7 +54,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
+        second: {r: .501960814, g: .501960814, b: .501960814, a: 1}
       data:
         first:
           name: _SpecColor
