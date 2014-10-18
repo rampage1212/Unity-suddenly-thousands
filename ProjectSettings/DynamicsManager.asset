@@ -3,8 +3,8 @@
 --- !u!55 &1
 PhysicsManager:
   m_ObjectHideFlags: 0
-  m_Gravity: {x: 0, y: -9.81000042, z: 0}
-  m_DefaultMaterial: {fileID: 0}
+  m_Gravity: {x: 0, y: -40, z: 0}
+  m_DefaultMaterial: {fileID: 13400000, guid: cdf7d3f1ad11f8d6d00011d98d76c639, type: 2}
   m_BounceThreshold: 2
   m_SleepVelocity: .150000006
   m_SleepAngularVelocity: .140000001
