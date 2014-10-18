@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class RecruitmentCollider : MonoBehaviour
@@ -10,7 +10,7 @@ public class RecruitmentCollider : MonoBehaviour
 
     void Update()
     {
-        foreach(ThirdPersonUserControl controller in controls.allCharacters)
+        foreach(ThirdPersonUserControl controller in controls.allLivingCharacters)
         {
             if(controller.characterController.indicator == ThirdPersonCharacter.Indicator.Standby)
             {

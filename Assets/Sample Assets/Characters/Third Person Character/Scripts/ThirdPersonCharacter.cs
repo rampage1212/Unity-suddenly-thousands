@@ -4,11 +4,11 @@ using System.Collections.Generic;
 
 public class ThirdPersonCharacter : MonoBehaviour
 {
-    public static readonly Color StandbyColor = Color.white;
-    public static readonly Color RecruitableColor = Color.red;
-    public static readonly Color ActiveColor = Color.yellow;
-    public static readonly Color ControlledColor = Color.green;
-    public static readonly Color DeadColor = Color.black;
+    public static readonly Color StandbyColor = Color.blue;
+    public static readonly Color RecruitableColor = Color.cyan;
+    public static readonly Color ActiveColor = Color.white;
+    public static readonly Color ControlledColor = Color.yellow;
+    public static readonly Color DeadColor = Color.red;
 
     public enum Indicator
 	{
@@ -196,7 +196,15 @@ public class ThirdPersonCharacter : MonoBehaviour
         // Update color
         foreach(Material material in allMaterials)
         {
-            material.color = Color.Lerp(material.color, targetColor, (lerpColor * Time.deltaTime));
+            if(currentIndicator == Indicator.Dead)
+            {
+                // If dead, don't lerp
+                material.color = targetColor;
+            }
+            else
+            {
+                material.color = Color.Lerp(material.color, targetColor, (lerpColor * Time.deltaTime));
+            }
         }
 	}
 

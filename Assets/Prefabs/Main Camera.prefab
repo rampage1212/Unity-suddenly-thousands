@@ -30,9 +30,10 @@ GameObject:
   - 81: {fileID: 8100000}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400006}
-  - 114: {fileID: 11400004}
   - 114: {fileID: 11400008}
+  - 114: {fileID: 11400004}
   - 114: {fileID: 11400002}
+  - 114: {fileID: 11400012}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -236,7 +237,7 @@ MonoBehaviour:
   lumThreshhold: .400000006
   edgeExp: .5
   sampleDist: 1.5
-  edgesOnly: .600000024
+  edgesOnly: .699999988
   edgesOnlyBgColor: {r: 1, g: 1, b: 1, a: 1}
   edgeDetectShader: {fileID: 4800000, guid: 0d1644bdf064147baa97f235fc5b4903, type: 3}
 --- !u!114 &11400006
@@ -287,6 +288,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controls: {fileID: 11400000}
   radius: 2.5
+--- !u!114 &11400012
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98e83bc58ae0e4e49817bc2c8d0e3ce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseButtonWidth: 100
+  pauseButtonHeight: 50
+  boxWidth: .5
+  boxHeight: .699999988
+  boxBottomMargin: .0199999996
+  boxButtonWidth: .449999988
+  continueButtonHeight: .25
+  restartLevelButtonHeight: .150000006
+  returnToMenuButtonHeight: .150000006
+  popUpSettings:
+    appearLength: 3
+    appearSpeed: 5
+    popUpWidth: 500
+    popUpHeight: 100
+    popUpMargin: 20
+  skin: {fileID: 11400000, guid: cecb4ab2e149fcf40b39716aea5acc12, type: 2}
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1

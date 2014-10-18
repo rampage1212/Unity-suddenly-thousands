@@ -206,7 +206,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Dying
       takeName: UNTY_die_tk02
-      firstFrame: 140
+      firstFrame: 156
       lastFrame: 275
       wrapMode: 0
       orientationOffsetY: 0

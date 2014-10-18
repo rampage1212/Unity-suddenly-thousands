@@ -132,10 +132,17 @@ public class PauseMenu : MonoBehaviour
 		GUI.skin = skin;
 		SceneTransition transition = Singleton.Get<SceneTransition>();
 		popUpSettings.Display(ref mTempRect, Time.deltaTime, transition);
-		//if((ThrowHead.IsPaused == true) && (transition.State == SceneTransition.Transition.NotTransitioning))
-		{
-			//DisplayPauseMenu(mTempRect, transition);
-		}
+        switch(MouseOrbitImproved.CurrentState)
+        {
+            case MouseOrbitImproved.State.Paused:
+            case MouseOrbitImproved.State.NotEnoughCharacters:
+            case MouseOrbitImproved.State.LostControl:
+                if(transition.State == SceneTransition.Transition.NotTransitioning)
+                {
+                    DisplayPauseMenu(mTempRect, transition);
+                }
+                break;
+        }
 	}
 	
 	void DisplayPauseMenu (Rect buttonRect, SceneTransition transition)
@@ -145,7 +152,18 @@ public class PauseMenu : MonoBehaviour
 		buttonRect.height = (Screen.height * boxHeight);
 		buttonRect.x = (Screen.width - buttonRect.width) / 2;
 		buttonRect.y = (Screen.height - buttonRect.height) / 2;
-		GUI.Box(buttonRect, "Pause");
+        switch(MouseOrbitImproved.CurrentState)
+        {
+            case MouseOrbitImproved.State.Paused:
+                GUI.Box(buttonRect, "Paused...");
+                break;
+            case MouseOrbitImproved.State.NotEnoughCharacters:
+                GUI.Box(buttonRect, "Not enough characters to finish!");
+                break;
+            case MouseOrbitImproved.State.LostControl:
+                GUI.Box(buttonRect, "Lost control of the all characters!");
+                break;
+        }
 		
 		// Add margin
 		buttonRect.y += buttonRect.height;
@@ -173,17 +191,20 @@ public class PauseMenu : MonoBehaviour
 			Time.timeScale = 1;
 			transition.LoadLevel(Application.loadedLevel);
 		}
-		
-		// Add margin
-		buttonRect.y -= (Screen.height * boxBottomMargin);
-		
-		// Display the continue button
-		buttonRect.height = (Screen.height * continueButtonHeight);
-		buttonRect.y -= buttonRect.height;
-		if(GUI.Button(buttonRect, "Continue") == true)
-		{
-			Time.timeScale = 1;
-			Screen.lockCursor = true;
-		}
+
+        if(MouseOrbitImproved.CurrentState == MouseOrbitImproved.State.Paused)
+        {
+            // Add margin
+            buttonRect.y -= (Screen.height * boxBottomMargin);
+            
+            // Display the continue button
+            buttonRect.height = (Screen.height * continueButtonHeight);
+            buttonRect.y -= buttonRect.height;
+            if(GUI.Button(buttonRect, "Continue") == true)
+            {
+                Time.timeScale = 1;
+                Screen.lockCursor = true;
+            }
+        }
 	}
 }

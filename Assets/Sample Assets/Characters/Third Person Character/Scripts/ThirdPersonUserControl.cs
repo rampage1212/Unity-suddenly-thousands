@@ -78,7 +78,7 @@ public class ThirdPersonUserControl : MonoBehaviour
 		character.ScaleCapsuleForCrouching(true);
 
 		// Add this character to the controls
-		MouseOrbitImproved.instance.allCharacters.Add(this);
+		MouseOrbitImproved.instance.allLivingCharacters.Add(this);
 	}
 
 	// Fixed update is called in sync with physics

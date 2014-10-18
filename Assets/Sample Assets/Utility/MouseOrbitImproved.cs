@@ -4,9 +4,18 @@ using System.Collections.Generic;
 
 public class MouseOrbitImproved : MonoBehaviour
 {
+    public enum State
+    {
+        Playing,
+        Finished,
+        Paused,
+        LostControl,
+        NotEnoughCharacters
+    }
 	public static MouseOrbitImproved instance;
 
     private const float SwitchGap = 0.2f;
+
 
 	public ThirdPersonUserControl target;
     public RecruitmentCollider trigger;
@@ -26,16 +35,33 @@ public class MouseOrbitImproved : MonoBehaviour
 	public float lerpTranslate = 5f;
 	public float lerpRotate = 10f;
 
+    State state = State.Playing;
 	float x = 0.0f;
 	float y = 0.0f;
 
-	public readonly HashSet<ThirdPersonUserControl> allCharacters = new HashSet<ThirdPersonUserControl>();
+	public readonly HashSet<ThirdPersonUserControl> allLivingCharacters = new HashSet<ThirdPersonUserControl>();
 	public readonly HashSet<ThirdPersonUserControl> standByCharacters = new HashSet<ThirdPersonUserControl>();
 	public readonly List<ThirdPersonUserControl> activeCharacters = new List<ThirdPersonUserControl>();
     private int controlledIndex = 0;
     private float switchTime = 0;
 
-	void Awake()
+    public static State CurrentState
+    {
+        get
+        {
+            return instance.state;
+        }
+        private set
+        {
+            if(instance.state != value)
+            {
+                instance.state = value;
+                Screen.lockCursor = (instance.state == State.Playing);
+            }
+        }
+    }
+
+    void Awake()
 	{
 		instance = this;
 	}
@@ -53,13 +79,12 @@ public class MouseOrbitImproved : MonoBehaviour
 		y = angles.x;
 		
 		// Make the rigid body not change rotation
-		if (rigidbody)
-			rigidbody.freezeRotation = true;
+        Screen.lockCursor = true;
 	}
 	
 	void FixedUpdate ()
     {
-		if (target)
+        if((target) && (CurrentState == State.Playing))
         {
 			if(target.state == ThirdPersonUserControl.State.Standby)
 			{
@@ -90,7 +115,58 @@ public class MouseOrbitImproved : MonoBehaviour
 
     public static void KillCharacter(ThirdPersonUserControl controller)
     {
-        // FIXME: kill the character, and do something about updating the controlled characters!
+        // Check if the character is still alive
+        if((instance != null) && (controller.state != ThirdPersonUserControl.State.Dead))
+        {
+            // Check if this is the character we're controlling
+            if(instance.activeCharacters[instance.controlledIndex] == controller)
+            {
+                // Check the number of characters
+                if(instance.activeCharacters.Count <= 1)
+                {
+                    // If there's only 1, indicate we lost control of the character
+                    CurrentState = State.LostControl;
+                }
+                else
+                {
+                    // Remove the character from the list
+                    instance.activeCharacters.RemoveAt(instance.controlledIndex);
+                    if(instance.controlledIndex >= instance.activeCharacters.Count)
+                    {
+                        instance.controlledIndex = 0;
+                    }
+
+                    // Switch control to the next character
+                    instance.target = instance.activeCharacters[instance.controlledIndex];
+                    instance.target.characterController.indicator = ThirdPersonCharacter.Indicator.Controlled;
+                }
+            }
+            else
+            {
+                // Check if the character is in the active list
+                for(int index = 0; index < instance.activeCharacters.Count; ++index)
+                {
+                    if((instance.controlledIndex != index) && (instance.activeCharacters[index] == controller))
+                    {
+                        // Remove the character from the list
+                        instance.activeCharacters.RemoveAt(index);
+                        if(index < instance.controlledIndex)
+                        {
+                            instance.controlledIndex--;
+                        }
+                        break;
+                    }
+                }
+            }
+
+            // Remove the character in the standby and living list
+            instance.standByCharacters.Remove(controller);
+            instance.allLivingCharacters.Remove(controller);
+
+            // Kill the character
+            controller.state = ThirdPersonUserControl.State.Dead;
+            controller.characterController.indicator = ThirdPersonCharacter.Indicator.Dead;
+        }
     }
 
 	void Setup()
