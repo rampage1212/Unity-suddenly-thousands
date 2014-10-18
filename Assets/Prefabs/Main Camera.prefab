@@ -137,6 +137,12 @@ MonoBehaviour:
   yOffset: 1
   lerpTranslate: 20
   lerpRotate: 20
+  pauseButtonWidth: 100
+  pauseButtonHeight: 50
+  boxWidth: .200000003
+  boxHeight: .200000003
+  margin: .00999999978
+  skin: {fileID: 11400000, guid: cecb4ab2e149fcf40b39716aea5acc12, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

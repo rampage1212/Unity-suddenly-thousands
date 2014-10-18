@@ -19,6 +19,8 @@ public class MouseOrbitImproved : MonoBehaviour
 	public ThirdPersonUserControl target;
     public GoalTrigger goal;
     public RecruitmentCollider trigger;
+
+    [Header("Control Adjustment")]
 	public float distance = 5.0f;
 	public float xSpeed = 120.0f;
 	public float ySpeed = 120.0f;
@@ -34,6 +36,14 @@ public class MouseOrbitImproved : MonoBehaviour
 	[Header("Lerp")]
 	public float lerpTranslate = 5f;
 	public float lerpRotate = 10f;
+    public int pauseButtonWidth = 100;
+    public int pauseButtonHeight = 50;
+
+    [Header("HUD")]
+    public float boxWidth = 0.2f;
+    public float boxHeight = 0.2f;
+    public float margin = 0.01f;
+    public GUISkin skin = null;
 
     State state = State.Playing;
 	float x = 0.0f;
@@ -44,6 +54,7 @@ public class MouseOrbitImproved : MonoBehaviour
 	public readonly List<ThirdPersonUserControl> activeCharacters = new List<ThirdPersonUserControl>();
     private int controlledIndex = 0;
     private float switchTime = 0;
+    private Rect buttonRect = new Rect(0, 0, 0, 0);
 
     public static State CurrentState
     {
@@ -111,6 +122,28 @@ public class MouseOrbitImproved : MonoBehaviour
             trigger.transform.position = target.transform.position;
 		}
 	}
+
+    void OnGUI()
+    {
+        SceneTransition transition = Singleton.Get<SceneTransition>();
+        if(transition.State == SceneTransition.Transition.NotTransitioning)
+        {
+            GUI.skin = skin;
+            
+            // Display the box
+            buttonRect.width = (Screen.width * boxWidth);
+            buttonRect.height = (Screen.height * boxHeight);
+            buttonRect.x = margin;
+            buttonRect.y = margin;
+            GUI.Box(buttonRect, "Alive: " + allLivingCharacters.Count);
+            
+            buttonRect.x = (Screen.width - buttonRect.width) / 2;
+            GUI.Box(buttonRect, "Active: " + activeCharacters.Count);
+            
+            buttonRect.x = (Screen.width - buttonRect.width - margin);
+            GUI.Box(buttonRect, "Goal: " + goal.expectedNumber);
+        }
+    }
 	
 	public static float ClampAngle(float angle, float min, float max)
 	{
@@ -134,6 +167,7 @@ public class MouseOrbitImproved : MonoBehaviour
                 {
                     // If there's only 1, indicate we lost control of the character
                     CurrentState = State.LostControl;
+                    instance.activeCharacters.Clear();
                 }
                 else
                 {
