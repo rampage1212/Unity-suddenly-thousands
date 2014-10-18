@@ -1219,7 +1219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkByDefault: 0
-  lookInCameraDirection: 1
+  lookInCameraDirection: 0
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

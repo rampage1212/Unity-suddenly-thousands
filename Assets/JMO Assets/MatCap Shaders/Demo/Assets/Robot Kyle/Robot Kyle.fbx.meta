@@ -109,7 +109,7 @@ ModelImporter:
     11100000: //RootNode
     13700000: Robot2
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
   animations:
