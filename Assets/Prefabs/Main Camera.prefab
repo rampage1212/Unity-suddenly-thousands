@@ -90,7 +90,7 @@ Transform:
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: -.1305262, y: 0, z: 0, w: .991444886}
   m_LocalPosition: {x: -2.32940888, y: -.82164675, z: -1.46461821}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 400002}
   m_RootOrder: 1
@@ -184,15 +184,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  triggerCollider: {fileID: 0}
+  trigger: {fileID: 11400010}
   distance: 4
-  xSpeed: 80
-  ySpeed: 20
-  zSpeed: 1
+  xSpeed: 40
+  ySpeed: 80
+  zSpeed: .25
   yMinLimit: 15
-  yMaxLimit: 60
+  yMaxLimit: 50
   distanceMin: 4
-  distanceMax: 12
+  distanceMax: 15
   yOffset: 1
   lerpTranslate: 20
   lerpRotate: 20
@@ -236,8 +236,8 @@ MonoBehaviour:
   lumThreshhold: .400000006
   edgeExp: .5
   sampleDist: 1.5
-  edgesOnly: 0
-  edgesOnlyBgColor: {r: .282758594, g: 1, b: 0, a: 1}
+  edgesOnly: .600000024
+  edgesOnlyBgColor: {r: 1, g: 1, b: 1, a: 1}
   edgeDetectShader: {fileID: 4800000, guid: 0d1644bdf064147baa97f235fc5b4903, type: 3}
 --- !u!114 &11400006
 MonoBehaviour:
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e653d08d21ce9453591b1dc2100fdfcd, type: 3}
   m_Name: 

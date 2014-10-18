@@ -6,7 +6,10 @@ public class MouseOrbitImproved : MonoBehaviour
 {
 	public static MouseOrbitImproved instance;
 
+    private const float SwitchGap = 0.2f;
+
 	public ThirdPersonUserControl target;
+    public RecruitmentCollider trigger;
 	public float distance = 5.0f;
 	public float xSpeed = 120.0f;
 	public float ySpeed = 120.0f;
@@ -30,6 +33,7 @@ public class MouseOrbitImproved : MonoBehaviour
 	public readonly HashSet<ThirdPersonUserControl> standByCharacters = new HashSet<ThirdPersonUserControl>();
 	public readonly List<ThirdPersonUserControl> activeCharacters = new List<ThirdPersonUserControl>();
     private int controlledIndex = 0;
+    private float switchTime = 0;
 
 	void Awake()
 	{
@@ -63,34 +67,15 @@ public class MouseOrbitImproved : MonoBehaviour
 			}
 
             // Grab the controls
-            if((Input.GetButton("Fire1") == true) && (standByCharacters.Count > 0))
+            UpdateCharacterState();
+            if((Time.time - switchTime) > SwitchGap)
             {
-                foreach(ThirdPersonUserControl controller in standByCharacters)
-                {
-                    activeCharacters.Add(controller);
-                    controller.state = ThirdPersonUserControl.State.Active;
-                    controller.characterController.indicator = ThirdPersonCharacter.Indicator.Active;
-                }
-                standByCharacters.Clear();
-            }
-            else if((Input.GetButton("Fire2")) && (activeCharacters.Count > 1))
-            {
-                ThirdPersonUserControl currentController = activeCharacters[controlledIndex];
-                foreach(ThirdPersonUserControl controller in activeCharacters)
-                {
-                    if(controller != currentController)
-                    {
-                        controller.state = ThirdPersonUserControl.State.Standby;
-                        controller.characterController.indicator = ThirdPersonCharacter.Indicator.Standby;
-                    }
-                }
-                activeCharacters.Clear();
-                activeCharacters.Add(currentController);
-                controlledIndex = 0;
+                UpdateControlledCharacter();
             }
 
             // Move the target character
 			MoveCharacter ();
+            trigger.transform.position = target.transform.position;
 		}
 	}
 	
@@ -103,6 +88,11 @@ public class MouseOrbitImproved : MonoBehaviour
 		return Mathf.Clamp(angle, min, max);
 	}
 
+    public static void KillCharacter(ThirdPersonUserControl controller)
+    {
+        // FIXME: kill the character, and do something about updating the controlled characters!
+    }
+
 	void Setup()
 	{
 		target.state = ThirdPersonUserControl.State.Active;
@@ -113,6 +103,79 @@ public class MouseOrbitImproved : MonoBehaviour
 			activeCharacters.Add(target);
 			controlledIndex = 0;
 		}
+    }
+
+    void UpdateCharacterState()
+    {
+        if ((Input.GetButtonDown("Fire1") == true) && (standByCharacters.Count > 0))
+        {
+            foreach (ThirdPersonUserControl controller in standByCharacters)
+            {
+                activeCharacters.Add(controller);
+                controller.state = ThirdPersonUserControl.State.Active;
+                controller.characterController.indicator = ThirdPersonCharacter.Indicator.Active;
+            }
+            standByCharacters.Clear();
+        }
+        else if ((Input.GetButtonDown("Fire2")) && (activeCharacters.Count > 1))
+        {
+            ThirdPersonUserControl currentController = activeCharacters[controlledIndex];
+            foreach (ThirdPersonUserControl controller in activeCharacters)
+            {
+                if (controller != currentController)
+                {
+                    controller.state = ThirdPersonUserControl.State.Standby;
+                    controller.characterController.indicator = ThirdPersonCharacter.Indicator.Standby;
+                }
+            }
+            activeCharacters.Clear();
+            activeCharacters.Add(currentController);
+            controlledIndex = 0;
+        }
+    }
+
+    void UpdateControlledCharacter()
+    {
+        // Make sure we're in control of at least one character
+        if(activeCharacters.Count > 1)
+        {
+            if(Input.GetButtonDown("SwitchCharactersRight") == true)
+            {
+                // Downgrade the controlled character to just active
+                ThirdPersonUserControl lastCharacter = activeCharacters[controlledIndex];
+                lastCharacter.characterController.indicator = ThirdPersonCharacter.Indicator.Active;
+
+                // Update the index
+                ++controlledIndex;
+                if(controlledIndex >= activeCharacters.Count)
+                {
+                    controlledIndex = 0;
+                }
+
+                // Move to the next character
+                target = activeCharacters[controlledIndex];
+                target.characterController.indicator = ThirdPersonCharacter.Indicator.Controlled;
+                switchTime = Time.time;
+            }
+            else if(Input.GetButtonDown("SwitchCharactersLeft") == true)
+            {
+                // Downgrade the controlled character to just active
+                ThirdPersonUserControl lastCharacter = activeCharacters[controlledIndex];
+                lastCharacter.characterController.indicator = ThirdPersonCharacter.Indicator.Active;
+
+                // Update the index
+                --controlledIndex;
+                if(controlledIndex < 0)
+                {
+                    controlledIndex = (activeCharacters.Count - 1);
+                }
+                
+                // Move to the next character
+                target = activeCharacters[controlledIndex];
+                target.characterController.indicator = ThirdPersonCharacter.Indicator.Controlled;
+                switchTime = Time.time;
+            }
+        }
     }
 
 	void MoveCharacter ()

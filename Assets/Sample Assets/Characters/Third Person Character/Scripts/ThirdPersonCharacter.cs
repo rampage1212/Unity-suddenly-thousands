@@ -1,8 +1,16 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
-public class ThirdPersonCharacter : MonoBehaviour {
-	public enum Indicator
+public class ThirdPersonCharacter : MonoBehaviour
+{
+    public static readonly Color StandbyColor = Color.white;
+    public static readonly Color RecruitableColor = Color.red;
+    public static readonly Color ActiveColor = Color.yellow;
+    public static readonly Color ControlledColor = Color.green;
+    public static readonly Color DeadColor = Color.black;
+
+    public enum Indicator
 	{
 		Standby,
 		Recruitable,
@@ -17,7 +25,9 @@ public class ThirdPersonCharacter : MonoBehaviour {
 	[SerializeField][Range(0.1f,3f)] float moveSpeedMultiplier = 1;	    // how much the move speed of the character will be multiplied by
 	[SerializeField][Range(0.1f,3f)] float animSpeedMultiplier = 1;	    // how much the animation of the character will be multiplied by
 	[SerializeField] AdvancedSettings advancedSettings;                 // Container for the advanced settings class , thiss allows the advanced settings to be in a foldout in the inspector
-	public TextMesh indicatorLabel = null;
+	[Header("Custom Parameters")]
+    public TextMesh indicatorLabel = null;
+    float lerpColor = 10f;
 
 	[System.Serializable]
 	public class AdvancedSettings
@@ -53,6 +63,8 @@ public class ThirdPersonCharacter : MonoBehaviour {
 	Vector3 velocity;
 	IComparer rayHitComparer;
 	Indicator currentIndicator = Indicator.Standby;
+    readonly HashSet<Material> allMaterials = new HashSet<Material>();
+    Color targetColor = StandbyColor;
 
 	public Indicator indicator
 	{
@@ -65,18 +77,29 @@ public class ThirdPersonCharacter : MonoBehaviour {
 			currentIndicator = value;
 			switch(currentIndicator)
 			{
-			case Indicator.Controlled:
-				indicatorLabel.text = "v";
-				indicatorLabel.renderer.enabled = true;
-				break;
-			case Indicator.Recruitable:
-				indicatorLabel.text = "!";
-				indicatorLabel.renderer.enabled = true;
-				break;
-			default:
-				indicatorLabel.renderer.enabled = false;
-				break;
-			}
+			    case Indicator.Controlled:
+                    targetColor = ControlledColor;
+    				indicatorLabel.text = "v";
+    				indicatorLabel.renderer.enabled = true;
+    				break;
+    			case Indicator.Recruitable:
+                    targetColor = RecruitableColor;
+    				indicatorLabel.text = "!";
+    				indicatorLabel.renderer.enabled = true;
+    				break;
+                case Indicator.Active:
+                    targetColor = ActiveColor;
+                    indicatorLabel.renderer.enabled = false;
+                	break;
+                case Indicator.Dead:
+                    targetColor = DeadColor;
+                    indicatorLabel.renderer.enabled = false;
+                    break;
+                case Indicator.Standby:
+                    targetColor = StandbyColor;
+                    indicatorLabel.renderer.enabled = false;
+                    break;
+            }
 		}
 	}
 
@@ -100,6 +123,19 @@ public class ThirdPersonCharacter : MonoBehaviour {
 	void Awake () {
 		animator = GetComponentInChildren<Animator>();
 		capsule = collider as CapsuleCollider;
+
+        // Grab all the materials
+        Renderer[] allRenderers = GetComponentsInChildren<Renderer>();
+        foreach(Renderer renderer in allRenderers)
+        {
+            foreach(Material material in renderer.materials)
+            {
+                if(material.HasProperty("_Color"))
+                {
+                    allMaterials.Add(material);
+                }
+            }
+        }
 
         // as can return null so we need to make sure thats its not before assigning to it
 	    if (capsule != null) {
@@ -157,7 +193,11 @@ public class ThirdPersonCharacter : MonoBehaviour {
 		// reassign velocity, since it will have been modified by the above functions.
 		rigidbody.velocity = velocity;	
 
-
+        // Update color
+        foreach(Material material in allMaterials)
+        {
+            material.color = Color.Lerp(material.color, targetColor, (lerpColor * Time.deltaTime));
+        }
 	}
 
 	void ConvertMoveInput ()
