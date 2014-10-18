@@ -31,7 +31,7 @@ Material:
         first:
           name: _MatCap
         second:
-          m_Texture: {fileID: 2800000, guid: 9db6cd28fff160847b0d71e5b77c9468, type: 3}
+          m_Texture: {fileID: 2800000, guid: a67746ccf89fdad44953182256f56521, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -72,7 +72,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .404411793, g: .404411793, b: .404411793, a: 1}
+        second: {r: .0665657297, g: .198529422, b: .033574827, a: 1}
       data:
         first:
           name: _SpecColor
