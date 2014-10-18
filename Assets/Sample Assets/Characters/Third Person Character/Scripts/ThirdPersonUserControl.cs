@@ -79,6 +79,9 @@ public class ThirdPersonUserControl : MonoBehaviour
 		character = GetComponent<ThirdPersonCharacter>();
 		character.rigidbody.isKinematic = true;
 		character.ScaleCapsuleForCrouching(true);
+
+		// Add this character to the controls
+		MouseOrbitImproved.instance.allCharacters.Add(this);
 	}
 
 	// Fixed update is called in sync with physics

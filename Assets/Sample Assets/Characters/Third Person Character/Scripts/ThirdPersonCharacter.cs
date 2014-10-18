@@ -204,7 +204,6 @@ public class ThirdPersonCharacter : MonoBehaviour {
 		if (crouchDown) {
 			capsule.height = (originalHeight * advancedSettings.crouchHeightFactor);
 			capsule.center = (Vector3.up * originalHeight * advancedSettings.crouchHeightFactor * half);
-			collider.material = advancedSettings.highFrictionMaterial;
 		}
 		// ... everything else 
 		else
@@ -378,16 +377,19 @@ public class ThirdPersonCharacter : MonoBehaviour {
 	
 	public void OnAnimatorMove()
 	{
-		// we implement this function to override the default root motion.
-		// this allows us to modify the positional speed before it's applied.
-		rigidbody.rotation = animator.rootRotation;
-		if (onGround && Time.deltaTime > 0) {
-			Vector3 v = (animator.deltaPosition * moveSpeedMultiplier) / Time.deltaTime;
+        if(rigidbody.isKinematic == false)
+        {
+    		// we implement this function to override the default root motion.
+    		// this allows us to modify the positional speed before it's applied.
+    		rigidbody.rotation = animator.rootRotation;
+    		if (onGround && Time.deltaTime > 0) {
+    			Vector3 v = (animator.deltaPosition * moveSpeedMultiplier) / Time.deltaTime;
 
-			// we preserve the existing y part of the current velocity.
-			v.y = rigidbody.velocity.y;
-			rigidbody.velocity = v;
-		}
+    			// we preserve the existing y part of the current velocity.
+    			v.y = rigidbody.velocity.y;
+    			rigidbody.velocity = v;
+    		}
+        }
 	}
 	
 
