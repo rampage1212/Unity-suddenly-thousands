@@ -2,7 +2,14 @@ using UnityEngine;
 using System.Collections;
 
 public class ThirdPersonCharacter : MonoBehaviour {
-	
+	public enum Indicator
+	{
+		Standby,
+		Recruitable,
+		Controlled,
+		Active,
+		Dead
+	}
 	[SerializeField] float jumpPower = 12;								// determines the jump force applied when jumping (and therefore the jump height)
 	[SerializeField] float airSpeed = 6;								// determines the max speed of the character while airborne
 	[SerializeField] float airControl = 2;								// determines the response speed of controlling the character while airborne
@@ -10,7 +17,7 @@ public class ThirdPersonCharacter : MonoBehaviour {
 	[SerializeField][Range(0.1f,3f)] float moveSpeedMultiplier = 1;	    // how much the move speed of the character will be multiplied by
 	[SerializeField][Range(0.1f,3f)] float animSpeedMultiplier = 1;	    // how much the animation of the character will be multiplied by
 	[SerializeField] AdvancedSettings advancedSettings;                 // Container for the advanced settings class , thiss allows the advanced settings to be in a foldout in the inspector
-
+	public TextMesh indicatorLabel = null;
 
 	[System.Serializable]
 	public class AdvancedSettings
@@ -45,9 +52,52 @@ public class ThirdPersonCharacter : MonoBehaviour {
 	float forwardAmount;
 	Vector3 velocity;
 	IComparer rayHitComparer;
+	Indicator currentIndicator = Indicator.Standby;
+
+	public Indicator indicator
+	{
+		get
+		{
+			return currentIndicator;
+		}
+		set
+		{
+			currentIndicator = value;
+			switch(currentIndicator)
+			{
+			case Indicator.Controlled:
+				indicatorLabel.text = "v";
+				indicatorLabel.renderer.enabled = true;
+				break;
+			case Indicator.Recruitable:
+				indicatorLabel.text = "!";
+				indicatorLabel.renderer.enabled = true;
+				break;
+			default:
+				indicatorLabel.renderer.enabled = false;
+				break;
+			}
+		}
+	}
+
+	public Animator CachedAnimator
+	{
+		get
+		{
+			return animator;
+		}
+	}
+
+	public CapsuleCollider CachedCollider
+	{
+		get
+		{
+			return capsule;
+		}
+	}
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		animator = GetComponentInChildren<Animator>();
 		capsule = collider as CapsuleCollider;
 
@@ -62,6 +112,7 @@ public class ThirdPersonCharacter : MonoBehaviour {
 		rayHitComparer = new RayHitComparer ();
 
 	    SetUpAnimator();
+		indicator = Indicator.Standby;
 	}
 	
 	
@@ -86,7 +137,7 @@ public class ThirdPersonCharacter : MonoBehaviour {
 
 		PreventStandingInLowHeadroom (); // so the character's head doesn't penetrate a low ceiling
 
-	    ScaleCapsuleForCrouching (); // so you can fit under low areas when crouching
+	    ScaleCapsuleForCrouching (crouchInput); // so you can fit under low areas when crouching
 
 		ApplyExtraTurnRotation(); // this is in addition to root rotation in the animations
 		
@@ -146,20 +197,21 @@ public class ThirdPersonCharacter : MonoBehaviour {
 		}
 	}	
 
-	void ScaleCapsuleForCrouching ()
+	public void ScaleCapsuleForCrouching (bool crouchDown)
 	{
 		// scale the capsule collider according to
 		// if crouching ...
-		if (onGround && crouchInput && (capsule.height != originalHeight * advancedSettings.crouchHeightFactor)) {
-			capsule.height = Mathf.MoveTowards (capsule.height, originalHeight * advancedSettings.crouchHeightFactor, Time.deltaTime * 4);
-			capsule.center = Vector3.MoveTowards (capsule.center, Vector3.up * originalHeight * advancedSettings.crouchHeightFactor * half, Time.deltaTime * 2);
+		if (crouchDown) {
+			capsule.height = (originalHeight * advancedSettings.crouchHeightFactor);
+			capsule.center = (Vector3.up * originalHeight * advancedSettings.crouchHeightFactor * half);
+			collider.material = advancedSettings.highFrictionMaterial;
 		}
 		// ... everything else 
 		else
-			if (capsule.height != originalHeight && capsule.center != Vector3.up * originalHeight * half) {
-				capsule.height = Mathf.MoveTowards (capsule.height, originalHeight, Time.deltaTime * 4);
-				capsule.center = Vector3.MoveTowards (capsule.center, Vector3.up * originalHeight * half, Time.deltaTime * 2);
-			}
+		{
+			capsule.height = originalHeight;
+			capsule.center = (Vector3.up * originalHeight * half);
+		}
 	}
 
 	void ApplyExtraTurnRotation ()

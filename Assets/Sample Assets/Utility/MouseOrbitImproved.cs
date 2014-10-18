@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 [AddComponentMenu("Camera-Control/Mouse Orbit with zoom")]
 public class MouseOrbitImproved : MonoBehaviour {
 	
-	public Transform target;
+	public ThirdPersonUserControl target;
+	public Collider triggerCollider;
 	public float distance = 5.0f;
 	public float xSpeed = 120.0f;
 	public float ySpeed = 120.0f;
@@ -22,6 +24,9 @@ public class MouseOrbitImproved : MonoBehaviour {
 
 	float x = 0.0f;
 	float y = 0.0f;
+
+	public readonly List<ThirdPersonUserControl> controlledCharacters = new List<ThirdPersonUserControl>();
+	private int controlledIndex = 0;
 	
 	// Use this for initialization
 	void Start () {
@@ -36,6 +41,12 @@ public class MouseOrbitImproved : MonoBehaviour {
 	
 	void FixedUpdate () {
 		if (target) {
+			if(target.state == ThirdPersonUserControl.State.Standby)
+			{
+				target.state = ThirdPersonUserControl.State.Active;
+				target.characterController.indicator = ThirdPersonCharacter.Indicator.Controlled;
+			}
+
 			x += Input.GetAxis("Mouse X") * xSpeed * distance * 0.02f;
 			y -= Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
 			
@@ -43,7 +54,7 @@ public class MouseOrbitImproved : MonoBehaviour {
 			
 			Quaternion rotation = Quaternion.Euler(y, x, 0);
 			
-			distance = Mathf.Clamp(distance - Input.GetAxis("Mouse ScrollWheel")*5, distanceMin, distanceMax);
+			distance = Mathf.Clamp(distance - Input.GetAxis("Mouse Y") * 5, distanceMin, distanceMax);
 			
 			RaycastHit hit;
 			if (Physics.Linecast (target.position, transform.position, out hit)) {
@@ -54,6 +65,9 @@ public class MouseOrbitImproved : MonoBehaviour {
 			
 			transform.rotation = Quaternion.Lerp(transform.rotation, rotation, (Time.deltaTime * lerpRotate));
 			transform.position = Vector3.Lerp(transform.position, position, (Time.deltaTime * lerpTranslate));
+
+			// Update the collider position
+			triggerCollider.transform.position = target.position;
 		}
 	}
 	
@@ -65,6 +79,4 @@ public class MouseOrbitImproved : MonoBehaviour {
 			angle -= 360F;
 		return Mathf.Clamp(angle, min, max);
 	}
-	
-	
 }
