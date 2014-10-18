@@ -11,7 +11,6 @@ public class ThirdPersonUserControl : MonoBehaviour
 	}
 	
 	public bool walkByDefault = false;                  // toggle for walking state
-	public bool lookInCameraDirection = true;           // should the character be looking in the same direction that the camera is facing
 	State currentState = State.Standby;
 
 	private Vector3 lookPos;                            // The position that the character should be looking towards
@@ -51,7 +50,6 @@ public class ThirdPersonUserControl : MonoBehaviour
 		{
 			if(currentState != value)
 			{
-				character.rigidbody.isKinematic = (value == State.Standby);
 				character.ScaleCapsuleForCrouching(value != State.Active);
 
 				// Update animator
@@ -77,7 +75,6 @@ public class ThirdPersonUserControl : MonoBehaviour
 
         // get the third person character ( this should never be null due to require component )
 		character = GetComponent<ThirdPersonCharacter>();
-		character.rigidbody.isKinematic = true;
 		character.ScaleCapsuleForCrouching(true);
 
 		// Add this character to the controls
@@ -87,14 +84,19 @@ public class ThirdPersonUserControl : MonoBehaviour
 	// Fixed update is called in sync with physics
 	void FixedUpdate ()
 	{
+        move = Vector3.zero;
+        lookPos = transform.position + transform.forward * 100;
+        bool jump = false;
+        bool crouching = true;
 		if(currentState == State.Active)
 		{
+            crouching = false;
 			#if CROSS_PLATFORM_INPUT
-			bool jump = CrossPlatformInput.GetButton("Jump");
+			jump = CrossPlatformInput.GetButton("Jump");
 			float h = CrossPlatformInput.GetAxis("Horizontal");
 			float v = CrossPlatformInput.GetAxis("Vertical");
 			#else
-			bool jump = Input.GetButton("Jump");
+			jump = Input.GetButton("Jump");
 			float h = Input.GetAxis("Horizontal");
 			float v = Input.GetAxis("Vertical");
 			#endif
@@ -120,18 +122,9 @@ public class ThirdPersonUserControl : MonoBehaviour
 			move *= walkMultiplier;
 			#endif
 
-			// On mobile, walk/run speed is controlled in analogue fashion by the v input value, and therefore needs no special handling.
-			// *hence no code here!*
-
-
-
-			// calculate the head look target position
-		    lookPos = lookInCameraDirection && cam != null
-		                  ? transform.position + cam.forward * 100
-		                  : transform.position + transform.forward * 100;
-
-		    // pass all parameters to the character control script
-			character.Move( move, false, jump, lookPos );
 		}
-	}
+
+        // pass all parameters to the character control script
+        character.Move( move, crouching, jump, lookPos );
+    }
 }

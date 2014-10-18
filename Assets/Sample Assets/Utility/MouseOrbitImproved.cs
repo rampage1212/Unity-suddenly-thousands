@@ -7,7 +7,6 @@ public class MouseOrbitImproved : MonoBehaviour
 	public static MouseOrbitImproved instance;
 
 	public ThirdPersonUserControl target;
-	public Collider triggerCollider;
 	public float distance = 5.0f;
 	public float xSpeed = 120.0f;
 	public float ySpeed = 120.0f;
@@ -132,7 +131,5 @@ public class MouseOrbitImproved : MonoBehaviour
 		Vector3 position = rotation * negDistance + target.position;
 		transform.rotation = Quaternion.Lerp (transform.rotation, rotation, (Time.deltaTime * lerpRotate));
 		transform.position = Vector3.Lerp (transform.position, position, (Time.deltaTime * lerpTranslate));
-		// Update the collider position
-		triggerCollider.transform.position = target.position;
 	}
 }

@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: FloorMaterial
-  m_Shader: {fileID: 4800000, guid: 0b4002bddac1f2e4585ed70d2f0d218b, type: 3}
+  m_Name: GoalMaterial
+  m_Shader: {fileID: 4800000, guid: 82a5dafa6185aa047b37fcd075aad18c, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -72,7 +72,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
+        second: {r: .404411793, g: .404411793, b: .404411793, a: 1}
       data:
         first:
           name: _SpecColor

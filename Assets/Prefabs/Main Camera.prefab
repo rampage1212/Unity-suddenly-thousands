@@ -48,7 +48,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400004}
-  - 135: {fileID: 13500000}
   - 114: {fileID: 11400010}
   m_Layer: 0
   m_Name: RecruitmentTrigger
@@ -185,10 +184,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  triggerCollider: {fileID: 13500000}
+  triggerCollider: {fileID: 0}
   distance: 4
   xSpeed: 80
   ySpeed: 20
+  zSpeed: 1
   yMinLimit: 15
   yMaxLimit: 60
   distanceMin: 4
@@ -286,6 +286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controls: {fileID: 11400000}
+  radius: 2.5
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1
@@ -293,18 +294,6 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_Enabled: 1
---- !u!135 &13500000
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100004}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

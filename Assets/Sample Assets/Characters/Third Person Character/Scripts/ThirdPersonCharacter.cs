@@ -204,6 +204,7 @@ public class ThirdPersonCharacter : MonoBehaviour {
 		if (crouchDown) {
 			capsule.height = (originalHeight * advancedSettings.crouchHeightFactor);
 			capsule.center = (Vector3.up * originalHeight * advancedSettings.crouchHeightFactor * half);
+            capsule.material = advancedSettings.highFrictionMaterial;
 		}
 		// ... everything else 
 		else
