@@ -124,6 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  goal: {fileID: 0}
   trigger: {fileID: 11400010}
   distance: 4
   xSpeed: 40

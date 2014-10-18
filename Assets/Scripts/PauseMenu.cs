@@ -137,6 +137,7 @@ public class PauseMenu : MonoBehaviour
             case MouseOrbitImproved.State.Paused:
             case MouseOrbitImproved.State.NotEnoughCharacters:
             case MouseOrbitImproved.State.LostControl:
+            case MouseOrbitImproved.State.Finished:
                 if(transition.State == SceneTransition.Transition.NotTransitioning)
                 {
                     DisplayPauseMenu(mTempRect, transition);
@@ -162,6 +163,9 @@ public class PauseMenu : MonoBehaviour
                 break;
             case MouseOrbitImproved.State.LostControl:
                 GUI.Box(buttonRect, "Lost control of the all characters!");
+                break;
+            case MouseOrbitImproved.State.Finished:
+                GUI.Box(buttonRect, "We made it!");
                 break;
         }
 		
@@ -206,6 +210,22 @@ public class PauseMenu : MonoBehaviour
                 Screen.lockCursor = true;
                 MouseOrbitImproved.CurrentState = MouseOrbitImproved.State.Playing;
             }
+        }
+        else if(MouseOrbitImproved.CurrentState == MouseOrbitImproved.State.Finished)
+        {
+            // Add margin
+            buttonRect.y -= (Screen.height * boxBottomMargin);
+
+            // Display the continue button
+            GUI.enabled = (Application.loadedLevel < GameSettings.NumLevels);
+            buttonRect.height = (Screen.height * continueButtonHeight);
+            buttonRect.y -= buttonRect.height;
+            if(GUI.Button(buttonRect, "Next Level") == true)
+            {
+                Time.timeScale = 1;
+                transition.LoadLevel(Application.loadedLevel + 1);
+            }
+            GUI.enabled = true;
         }
 	}
 }

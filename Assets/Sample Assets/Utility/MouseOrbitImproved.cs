@@ -16,8 +16,8 @@ public class MouseOrbitImproved : MonoBehaviour
 
     private const float SwitchGap = 0.2f;
 
-
 	public ThirdPersonUserControl target;
+    public GoalTrigger goal;
     public RecruitmentCollider trigger;
 	public float distance = 5.0f;
 	public float xSpeed = 120.0f;
@@ -174,6 +174,12 @@ public class MouseOrbitImproved : MonoBehaviour
             // Kill the character
             controller.state = ThirdPersonUserControl.State.Dead;
             controller.characterController.indicator = ThirdPersonCharacter.Indicator.Dead;
+
+            // Check if there's enough character alive
+            if(instance.allLivingCharacters.Count < instance.goal.expectedNumber)
+            {
+                CurrentState = State.NotEnoughCharacters;
+            }
         }
     }
 

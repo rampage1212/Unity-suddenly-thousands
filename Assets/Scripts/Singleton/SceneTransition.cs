@@ -17,12 +17,13 @@ public class SceneTransition : ISingletonScript
 	public float fadeInSpeed = 1f;
 	public float fadeOutDuration = 1f;
 	public float fadeOutSpeed = 5f;
+    public GUIText text = null;
 	
 	private int mNextLevel = 1;
 	private Transition mTransitionState = Transition.NotTransitioning;
 	private float mTargetAlpha = 0;
 	private float mCurrentAlpha = 0;
-	private Color mTargetColor;
+	private Color mTargetColor, mTargetTextColor;
 	
 	public Transition State
 	{
@@ -43,12 +44,20 @@ public class SceneTransition : ISingletonScript
 	public override void SingletonStart()
 	{
 		mTargetColor = guiTexture.color;
+        mTargetTextColor = text.color;
+
 		mTargetAlpha = 0;
 		mCurrentAlpha = 0;
-		mTargetColor.a = mTargetAlpha;
-		guiTexture.color = mTargetColor;
-		guiTexture.enabled = false;
-	}
+		
+        mTargetColor.a = mTargetAlpha;
+        mTargetTextColor.a = mTargetAlpha;
+		
+        guiTexture.color = mTargetTextColor;
+        text.color = mTargetTextColor;
+
+        guiTexture.enabled = false;
+        text.enabled = false;
+    }
 	
 	public override void SceneStart()
 	{
@@ -75,6 +84,13 @@ public class SceneTransition : ISingletonScript
 			
 			// Start fading in
 			StartCoroutine(FadeIn());
+
+            // Check what level we're loading to
+            text.text = "Menu";
+            if(levelIndex > 0)
+            {
+                text.text = "Level " + levelIndex;
+            }
 		}
 	}
 	
@@ -85,38 +101,62 @@ public class SceneTransition : ISingletonScript
 		{
 			case Transition.FadingIn:
 			{
-				if(guiTexture.enabled == false)
+                if(guiTexture.enabled == false)
 				{
 					mTargetColor = guiTexture.color;
+                    mTargetTextColor = text.color;
+
 					mTargetAlpha = 1;
 					mCurrentAlpha = 0;
-					mTargetColor.a = mTargetAlpha;
-					guiTexture.color = mTargetColor;
+					
+                    mTargetColor.a = mTargetAlpha;
+                    mTargetTextColor.a = mTargetAlpha;
+
+                    guiTexture.color = mTargetColor;
+                    text.color = mTargetTextColor;
+
 					guiTexture.enabled = true;
+                    text.enabled = true;
 				}
 				else
 				{
 					mCurrentAlpha = Mathf.Lerp(mCurrentAlpha, mTargetAlpha, (Time.deltaTime * fadeInSpeed));
-					mTargetColor.a = mCurrentAlpha;
+					
+                    mTargetColor.a = mCurrentAlpha;
+                    mTargetTextColor.a = mCurrentAlpha;
+
 					guiTexture.color = mTargetColor;
+                    text.color = mTargetTextColor;
 				}
 				break;
 			}
 			case Transition.FadingOut:
 			{
 				mCurrentAlpha = Mathf.Lerp(mCurrentAlpha, mTargetAlpha, (Time.deltaTime * fadeOutSpeed));
-				mTargetColor.a = mCurrentAlpha;
+				
+                mTargetColor.a = mCurrentAlpha;
+                mTargetTextColor.a = mCurrentAlpha;
+
 				guiTexture.color = mTargetColor;
+                text.color = mTargetTextColor;
 				break;
 			}
 			case Transition.CompletelyFaded:
 			{
 				mTargetColor = guiTexture.color;
+                mTargetTextColor = text.color;
+
 				mTargetAlpha = 0;
 				mCurrentAlpha = 1;
-				mTargetColor.a = mCurrentAlpha;
-				guiTexture.color = mTargetColor;
-				guiTexture.enabled = true;
+				
+                mTargetColor.a = mCurrentAlpha;
+                mTargetTextColor.a = mTargetAlpha;
+
+                guiTexture.color = mTargetColor;
+                text.color = mTargetTextColor;
+
+                guiTexture.enabled = true;
+                text.enabled = true;
 				break;
 			}
 			default:
@@ -125,6 +165,10 @@ public class SceneTransition : ISingletonScript
 				{
 					guiTexture.enabled = false;
 				}
+                if(text.enabled == true)
+                {
+                    text.enabled = false;
+                }
 				break;
 			}
 		}

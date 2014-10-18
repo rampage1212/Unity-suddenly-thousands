@@ -96,7 +96,8 @@ public class ThirdPersonUserControl : MonoBehaviour
         lookPos = transform.position + transform.forward * 100;
         bool jump = false;
         bool crouching = true;
-        if((MouseOrbitImproved.instance != null) && (currentState == State.Active))
+        if((MouseOrbitImproved.instance != null) && (MouseOrbitImproved.CurrentState == MouseOrbitImproved.State.Playing) &&
+           (currentState == State.Active))
 		{
             crouching = false;
 			#if CROSS_PLATFORM_INPUT

@@ -20,6 +20,10 @@ public class GoalTrigger : MonoBehaviour
         {
             characters.Add(other);
             numberIndicator.text = string.Format("{0}/{1}", characters.Count, expectedNumber);
+            if(characters.Count >= expectedNumber)
+            {
+                MouseOrbitImproved.CurrentState = MouseOrbitImproved.State.Finished;
+            }
         }
     }
 

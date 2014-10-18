@@ -176,7 +176,6 @@ GameObject:
   - 65: {fileID: 6500000}
   - 114: {fileID: 11400000}
   - 82: {fileID: 8200000}
-  - 114: {fileID: 11400008}
   m_Layer: 0
   m_Name: KillerLaser
   m_TagString: Untagged
@@ -1067,13 +1066,13 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: c83d290580d9743409e4185fd2e1c647, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: .100000001
+  m_Pitch: .600000024
   Loop: 1
   Mute: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 4.98225784
+  MinDistance: 2
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -1204,19 +1203,6 @@ MonoBehaviour:
   interval: .0500000007
   min: {x: -.5, y: -.25, z: -.5}
   max: {x: .5, y: .25, z: .5}
---- !u!114 &11400008
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 108c5039c6241934f8e453e3467e2dc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  centerPitch: 1
-  pitchMutationRange: {x: -.5, y: .5}
 --- !u!120 &12000000
 LineRenderer:
   m_ObjectHideFlags: 1
