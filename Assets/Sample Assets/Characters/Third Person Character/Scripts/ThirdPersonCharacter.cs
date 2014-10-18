@@ -27,7 +27,13 @@ public class ThirdPersonCharacter : MonoBehaviour
 	[SerializeField] AdvancedSettings advancedSettings;                 // Container for the advanced settings class , thiss allows the advanced settings to be in a foldout in the inspector
 	[Header("Custom Parameters")]
     public TextMesh indicatorLabel = null;
-    float lerpColor = 10f;
+    public float lerpColor = 15f;
+    public AudioClip footsteps;
+    public AudioClip jump;
+    public AudioClip land;
+    public AudioClip die;
+    public AudioClip standby;
+    public AudioClip activate;
 
 	[System.Serializable]
 	public class AdvancedSettings
