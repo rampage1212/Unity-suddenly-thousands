@@ -1302,10 +1302,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce7a80d520cacc042b5fe14f373d8173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpPower: 10
-  airSpeed: 6
-  airControl: 2
-  gravityMultiplier: 2
+  jumpPower: 13
+  airSpeed: 8
+  airControl: 4
+  gravityMultiplier: 1.79999995
   moveSpeedMultiplier: 1
   animSpeedMultiplier: 1
   advancedSettings:
