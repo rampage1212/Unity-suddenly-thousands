@@ -140,8 +140,8 @@ MonoBehaviour:
   pauseButtonWidth: 100
   pauseButtonHeight: 50
   boxWidth: .200000003
-  boxHeight: .200000003
-  margin: .00999999978
+  boxHeight: .100000001
+  margin: .0500000007
   skin: {fileID: 11400000, guid: cecb4ab2e149fcf40b39716aea5acc12, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:
@@ -183,7 +183,7 @@ MonoBehaviour:
   lumThreshhold: .400000006
   edgeExp: .5
   sampleDist: 1.5
-  edgesOnly: .699999988
+  edgesOnly: .75
   edgesOnlyBgColor: {r: 1, g: 1, b: 1, a: 1}
   edgeDetectShader: {fileID: 4800000, guid: 0d1644bdf064147baa97f235fc5b4903, type: 3}
 --- !u!114 &11400006
