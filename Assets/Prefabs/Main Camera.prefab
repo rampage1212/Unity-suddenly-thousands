@@ -26,11 +26,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: .148548916, y: .524243653, z: -.0934271216, w: .833290637}
-  m_LocalPosition: {x: -31.7778969, y: 8.53215122, z: -19.3086548}
+  m_LocalRotation: {x: .1305262, y: 0, z: 0, w: .991444886}
+  m_LocalPosition: {x: .078047514, y: 2.5, z: -3.55999994}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 0
 --- !u!20 &2000000
 Camera:
   m_ObjectHideFlags: 1
@@ -58,7 +59,11 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
   m_HDR: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: .0219999999
 --- !u!81 &8100000
 AudioListener:
   m_ObjectHideFlags: 1
@@ -81,11 +86,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32c8fa2dc8dc24838986e31aaa0b16be, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f71d737eebe8794c984eef4ac122758, type: 3}
   m_Name: 
-  distanceAway: 4
-  distanceUp: 4
-  smooth: 3
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  distance: 6
+  xSpeed: 80
+  ySpeed: 200
+  yMinLimit: 2
+  yMaxLimit: 80
+  distanceMin: 2
+  distanceMax: 10
+  yOffset: 1
+  lerpTranslate: 20
+  lerpRotate: 20
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1
