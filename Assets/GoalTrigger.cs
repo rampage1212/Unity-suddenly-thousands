@@ -11,7 +11,7 @@ public class GoalTrigger : MonoBehaviour
 
     void Start()
     {
-        numberIndicator.text = string.Format("0/{1}", 0, expectedNumber);
+        numberIndicator.text = string.Format("0/{0}", expectedNumber);
     }
 
     void OnTriggerEnter(Collider other)
