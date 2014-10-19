@@ -398,6 +398,7 @@ MonoBehaviour:
   doorRenderers:
   - {fileID: 2300006}
   - {fileID: 2300004}
+  doorLerp: 5
   doorAudio: {fileID: 11400002}
   doorOpen: {fileID: 8300000, guid: aaa271c8a9acd5d41a76d00a82493c23, type: 3}
   doorClose: {fileID: 8300000, guid: c7d3c04245c2f884b8d11827a983f83a, type: 3}

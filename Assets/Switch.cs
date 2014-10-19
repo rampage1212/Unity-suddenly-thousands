@@ -116,7 +116,7 @@ public class Switch : MonoBehaviour
             }
             if((triggerOnce == true) && (IsTriggered == true))
             {
-                numberIndicator.text = "-";
+                numberIndicator.text = "OK";
             }
             else
             {
