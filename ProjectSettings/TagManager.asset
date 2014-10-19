@@ -7,19 +7,20 @@ TagManager:
   - Dangerous
   - Smelly
   - Fire
+  - Movable
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
   Builtin Layer 2: Ignore Raycast
   Builtin Layer 3: 
   Builtin Layer 4: Water
-  Builtin Layer 5: 
+  Builtin Layer 5: UI
   Builtin Layer 6: 
   Builtin Layer 7: 
   User Layer 8: Vehicles
   User Layer 9: Characters
   User Layer 10: Floor
-  User Layer 11: 
+  User Layer 11: Movable
   User Layer 12: 
   User Layer 13: 
   User Layer 14: 

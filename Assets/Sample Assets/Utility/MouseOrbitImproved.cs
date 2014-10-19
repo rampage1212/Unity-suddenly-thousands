@@ -101,9 +101,14 @@ public class MouseOrbitImproved : MonoBehaviour
     {
         if((target) && (CurrentState == State.Playing))
         {
+
             if(Input.GetButton("Pause"))
             {
-                CurrentState = State.Paused;
+                SceneTransition transition = Singleton.Get<SceneTransition>();
+                if(transition.State == SceneTransition.Transition.NotTransitioning)
+                {
+                    CurrentState = State.Paused;
+                }
             }
 			if(target.state == ThirdPersonUserControl.State.Standby)
 			{
