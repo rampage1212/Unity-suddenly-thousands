@@ -75,7 +75,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7, y: -.00999998022, z: 8}
+  m_LocalPosition: {x: 7, y: .0500000007, z: 8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400002}
@@ -131,7 +131,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 994db74ef5316954ba16f493e944ffe3, type: 2}
+  - {fileID: 2100000, guid: aa2a8256aee47db498283d4d66c28adf, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -216,10 +216,10 @@ MonoBehaviour:
   lerpColor: 10
   switchRenderer: {fileID: 2300000}
   switchTriggeredColor: {r: .397327304, g: .816176474, b: .156033739, a: 1}
-  switchNotTriggeredColor: {r: .970588207, g: .872151315, b: .0785034746, a: 1}
+  switchNotTriggeredColor: {r: .205990463, g: .808896899, b: .933823526, a: 1}
   wireRenderer: {fileID: 12000000}
   wireTriggeredColor: {r: .396078438, g: .811764717, b: .156862751, a: 0}
-  wireNotTriggeredColor: {r: .968627453, g: .866666675, b: .0784313753, a: 1}
+  wireNotTriggeredColor: {r: .20784314, g: .80392158, b: .929411769, a: 1}
   triggerOnce: 0
 --- !u!114 &11400002
 MonoBehaviour:

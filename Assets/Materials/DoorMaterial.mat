@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: SwitchTriggerOnce
-  m_Shader: {fileID: 30, guid: 0000000000000000f000000000000000, type: 0}
+  m_Name: DoorMaterial
+  m_Shader: {fileID: 4800000, guid: 98e44338c0d8bde41ad647579aa2609d, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -17,7 +17,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: f318fab298e222140a556d617b3c0ab5, type: 3}
+          m_Texture: {fileID: 2800000, guid: b56a521c7e96e064c809599300590e46, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -29,16 +29,9 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _DecalTex
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
           name: _MatCap
         second:
-          m_Texture: {fileID: 2800000, guid: a67746ccf89fdad44953182256f56521, type: 3}
+          m_Texture: {fileID: 2800000, guid: a4cdca73d61814d33ac1587f6c163bca, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -62,18 +55,7 @@ Material:
           m_Texture: {fileID: 2800000, guid: 4a056241e2722dc46a7262a8e7073fd9, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _ParallaxMap
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
     m_Floats:
-      data:
-        first:
-          name: _Cutoff
-        second: .196428567
       data:
         first:
           name: _Shininess
@@ -81,24 +63,20 @@ Material:
       data:
         first:
           name: _RimPower
-        second: 3
+        second: 1.39999998
       data:
         first:
           name: _Outline
         second: .00499999989
-      data:
-        first:
-          name: _Parallax
-        second: .0199999996
     m_Colors:
       data:
         first:
           name: _Color
-        second: {r: .968627453, g: .866666675, b: .0784313753, a: 1}
+        second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _SpecColor
-        second: {r: .92120868, g: .926470578, b: .544982672, a: 1}
+        second: {r: .842657328, g: .842657328, b: .842657328, a: 1}
       data:
         first:
           name: _ReflectColor

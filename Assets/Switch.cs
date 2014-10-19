@@ -52,6 +52,13 @@ public class Switch : MonoBehaviour
         }
     }
 
+    public void ForceTrigger()
+    {
+        isTriggered = true;
+        triggerOnce = true;
+        numberIndicator.text = "-";
+    }
+
     void Start()
     {
         numberIndicator.text = string.Format("0/{0}", expectedNumber);

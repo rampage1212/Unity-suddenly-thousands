@@ -4,10 +4,10 @@ using System.Collections.Generic;
 
 public class ThirdPersonCharacter : MonoBehaviour
 {
-    public static readonly Color StandbyColor = Color.blue;
-    public static readonly Color RecruitableColor = Color.cyan;
-    public static readonly Color ActiveColor = Color.white;
-    public static readonly Color ControlledColor = Color.yellow;
+    public static readonly Color StandbyColor = Color.gray;
+    public static readonly Color RecruitableColor = Color.yellow;
+    public static readonly Color ActiveColor = Color.blue;
+    public static readonly Color ControlledColor = Color.green;
     public static readonly Color DeadColor = Color.red;
 
     public enum Indicator
