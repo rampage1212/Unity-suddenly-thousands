@@ -71,6 +71,20 @@ public class ThirdPersonCharacter : MonoBehaviour
 	Indicator currentIndicator = Indicator.Standby;
     readonly HashSet<Material> allMaterials = new HashSet<Material>();
     Color targetColor = StandbyColor;
+    AudioMutator audioMutator = null;
+    float lastRunCycle = 0;
+
+    public AudioMutator CachedAudio
+    {
+        get
+        {
+            if(audioMutator == null)
+            {
+                audioMutator = GetComponent<AudioMutator>();
+            }
+            return audioMutator;
+        }
+    }
 
 	public Indicator indicator
 	{
@@ -80,6 +94,29 @@ public class ThirdPersonCharacter : MonoBehaviour
 		}
 		set
 		{
+            // Play sound effect
+            if((currentIndicator == Indicator.Active) && (value == Indicator.Standby))
+            {
+                CachedAudio.Audio.clip = standby;
+                CachedAudio.Play();
+            }
+            else if((currentIndicator != Indicator.Dead) && (value == Indicator.Dead))
+            {
+                CachedAudio.Audio.clip = die;
+                CachedAudio.Play();
+            }
+            else if((currentIndicator == Indicator.Recruitable) && (value == Indicator.Active))
+            {
+                CachedAudio.Audio.clip = activate;
+                CachedAudio.Play();
+            }
+            else if((currentIndicator == Indicator.Active) && (value == Indicator.Controlled))
+            {
+                CachedAudio.Audio.clip = activate;
+                CachedAudio.Play();
+            }
+
+            // Update state
 			currentIndicator = value;
 			switch(currentIndicator)
 			{
@@ -280,6 +317,7 @@ public class ThirdPersonCharacter : MonoBehaviour
 		Ray ray = new Ray (transform.position + Vector3.up * .1f, -Vector3.up);
 		RaycastHit[] hits = Physics.RaycastAll (ray, .5f);
 		System.Array.Sort (hits, rayHitComparer);
+        bool lastOnGround = onGround;
         
 		if (velocity.y < jumpPower * .5f) {
 			onGround = false;
@@ -300,6 +338,12 @@ public class ThirdPersonCharacter : MonoBehaviour
 				}
 			}
 		}
+
+        if((lastOnGround != onGround) && (onGround == true))
+        {
+            CachedAudio.Audio.clip = land;
+            CachedAudio.Play();
+        }
 
 		// remember when we were last in air, for jump delay
 		if (!onGround) lastAirTime = Time.time;
@@ -344,6 +388,8 @@ public class ThirdPersonCharacter : MonoBehaviour
 			onGround = false;
 			velocity = moveInput * airSpeed;
 			velocity.y = jumpPower;
+            CachedAudio.Audio.clip = jump;
+            CachedAudio.Play();
 		}
 	}
 
@@ -384,7 +430,17 @@ public class ThirdPersonCharacter : MonoBehaviour
 		float jumpLeg = (runCycle < half ? 1 : -1) * forwardAmount;
 		if (onGround) {
 			animator.SetFloat ("JumpLeg", jumpLeg);
-		}
+
+            if((forwardAmount > 0.1f) && ((indicator == Indicator.Active) || (indicator == Indicator.Controlled)))
+            {
+                if(((lastRunCycle < 0.25f) && (runCycle > 0.25f)) || ((lastRunCycle < 0.75f) && (runCycle > 0.75f)))
+                {
+                    CachedAudio.Audio.clip = footsteps;
+                    CachedAudio.Play();
+                }
+            }
+            lastRunCycle = runCycle;
+        }
 
 		// the anim speed multiplier allows the overall speed of walking/running to be tweaked in the inspector,
 		// which affects the movement speed because of the root motion.

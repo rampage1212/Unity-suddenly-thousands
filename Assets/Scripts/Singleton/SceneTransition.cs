@@ -150,7 +150,7 @@ public class SceneTransition : ISingletonScript
 				mCurrentAlpha = 1;
 				
                 mTargetColor.a = mCurrentAlpha;
-                mTargetTextColor.a = mTargetAlpha;
+                mTargetTextColor.a = mCurrentAlpha;
 
                 guiTexture.color = mTargetColor;
                 text.color = mTargetTextColor;

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
+[RequireComponent(typeof(AudioMutator))]
 public class MouseOrbitImproved : MonoBehaviour
 {
     public enum State
@@ -45,6 +46,10 @@ public class MouseOrbitImproved : MonoBehaviour
     public float margin = 0.01f;
     public GUISkin skin = null;
 
+    [Header("Audio")]
+    public AudioClip success;
+    public AudioClip fail;
+
     State state = State.Playing;
 	float x = 0.0f;
 	float y = 0.0f;
@@ -55,6 +60,19 @@ public class MouseOrbitImproved : MonoBehaviour
     private int controlledIndex = 0;
     private float switchTime = 0;
     private Rect buttonRect = new Rect(0, 0, 0, 0);
+    AudioMutator audioCache;
+
+    public AudioMutator CachedAudio
+    {
+        get
+        {
+            if(audioCache == null)
+            {
+                audioCache = GetComponent<AudioMutator>();
+            }
+            return audioCache;
+        }
+    }
 
     public static State CurrentState
     {
@@ -71,6 +89,18 @@ public class MouseOrbitImproved : MonoBehaviour
                 if(instance.state == State.Paused)
                 {
                     Time.timeScale = 0;
+                }
+                switch(instance.state)
+                {
+                    case State.LostControl:
+                    case State.NotEnoughCharacters:
+                        instance.CachedAudio.Audio.clip = instance.fail;
+                        instance.CachedAudio.Play();
+                        break;
+                    case State.Finished:
+                        instance.CachedAudio.Audio.clip = instance.success;
+                        instance.CachedAudio.Play();
+                        break;
                 }
             }
         }
