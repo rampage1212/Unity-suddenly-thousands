@@ -348,8 +348,9 @@ public class MouseOrbitImproved : MonoBehaviour
 		distance = Mathf.Clamp (distance - Input.GetAxis ("Mouse Y") * zSpeed, distanceMin, distanceMax);
 
 		RaycastHit hit;
-        if (Physics.Linecast (target.position, transform.position, out hit, raycastLayers)) {
-			distance -= hit.distance;
+        //if (Physics.Linecast (target.position, transform.position, out hit, raycastLayers))
+        {
+			//distance -= hit.distance;
 		}
 
 		Vector3 negDistance = new Vector3 (0.0f, yOffset, -distance);
