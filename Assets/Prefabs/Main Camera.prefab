@@ -117,7 +117,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: .400000006
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -195,6 +195,9 @@ MonoBehaviour:
   distanceMin: 4
   distanceMax: 15
   yOffset: 1
+  raycastLayers:
+    serializedVersion: 2
+    m_Bits: 4294964703
   lerpTranslate: 20
   lerpRotate: 20
   pauseButtonWidth: 100
@@ -203,7 +206,7 @@ MonoBehaviour:
   boxHeight: .100000001
   margin: .0500000007
   skin: {fileID: 11400000, guid: cecb4ab2e149fcf40b39716aea5acc12, type: 2}
-  success: {fileID: 8300000, guid: ef863394110a8b94f8c1a2c08be3ba0b, type: 3}
+  success: {fileID: 8300000, guid: 8d9fc6f2435811e4bbfdf0da71540bbd, type: 3}
   fail: {fileID: 8300000, guid: 34b737882b9dfb8468a20f93d649edc6, type: 3}
 --- !u!114 &11400002
 MonoBehaviour:
