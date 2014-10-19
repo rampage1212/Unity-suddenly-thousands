@@ -21,7 +21,7 @@ Astrella
 -Unity
 
 Tiny Archer, Erana
-Tiny Fighter, Lina
+Tiny Fighter, Lia
 Tiny Figher, Violet
 Tiny Knight, Straton
 Tiny Hunter

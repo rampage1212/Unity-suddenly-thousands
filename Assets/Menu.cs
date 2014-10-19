@@ -86,7 +86,7 @@ public class Menu : MonoBehaviour
 			buttonDimension.height -= margin;
 			for(level = 1; level <= GameSettings.NumLevels; level += 2)
 			{
-				buttonText = ("Level " + level);
+                buttonText = LabelText(level);
 				GUI.enabled = (level <= gameSettingInstance.NumLevelsUnlocked);
 				if(GUI.Button(buttonDimension, buttonText) == true)
 				{
@@ -100,7 +100,7 @@ public class Menu : MonoBehaviour
 			buttonDimension.x = (Screen.width / 2f) + (margin / 2f);
 			for(level = 2; level <= GameSettings.NumLevels; level += 2)
 			{
-				buttonText = ("Level " + level);
+                buttonText = LabelText(level);
 				GUI.enabled = (level <= gameSettingInstance.NumLevelsUnlocked);
 				if(GUI.Button(buttonDimension, buttonText) == true)
 				{
@@ -127,6 +127,18 @@ public class Menu : MonoBehaviour
 			}
 		}
 	}
+
+    string LabelText(int level)
+    {
+        if(level == GameSettings.NumLevels)
+        {
+            return "Credits";
+        }
+        else
+        {
+            return ("Level " + level);
+        }
+    }
 	
 	void Update()
 	{

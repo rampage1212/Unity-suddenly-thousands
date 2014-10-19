@@ -87,7 +87,11 @@ public class SceneTransition : ISingletonScript
 
             // Check what level we're loading to
             text.text = "Menu";
-            if(levelIndex > 0)
+            if(levelIndex == GameSettings.NumLevels)
+            {
+                text.text = "Credits";
+            }
+            else if(levelIndex > 0)
             {
                 text.text = "Level " + levelIndex;
             }
