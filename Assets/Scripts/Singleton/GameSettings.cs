@@ -4,7 +4,7 @@ using System.Collections;
 public class GameSettings : ISingletonScript
 {
 	public const int MenuLevel = 0;
-	public const int NumLevels = 8;
+	public const int NumLevels = 9;
 	
 	public const string NumLevelsUnlockedKey = "numLevelsUnlocked";
 

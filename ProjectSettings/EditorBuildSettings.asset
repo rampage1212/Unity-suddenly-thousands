@@ -22,4 +22,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level07.unity
   - enabled: 1
+    path: Assets/Scenes/Level08.unity
+  - enabled: 1
     path: Assets/Scenes/Credits.unity
