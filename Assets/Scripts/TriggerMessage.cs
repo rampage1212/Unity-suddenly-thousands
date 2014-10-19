@@ -26,4 +26,18 @@ public class TriggerMessage : MonoBehaviour
             }
 		}
 	}
+
+    public void OnTriggerExit(Collider other)
+    {
+        if((mIsTriggered == false) && (other.CompareTag("Player") == true))
+        {
+            // Grab the controller
+            ThirdPersonUserControl controller = other.GetComponent<ThirdPersonUserControl>();
+            if((controller != null) && (controller.characterController.indicator == ThirdPersonCharacter.Indicator.Controlled))
+            {
+                PauseMenu.HideMessage();
+                mIsTriggered = true;
+            }
+        }
+    }
 }
