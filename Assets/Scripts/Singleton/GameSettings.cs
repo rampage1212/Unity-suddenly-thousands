@@ -4,13 +4,9 @@ using System.Collections;
 public class GameSettings : ISingletonScript
 {
 	public const int MenuLevel = 0;
-	public const int NumLevels = 9;
+	public const int NumLevels = 10;
 	
-	public const string NumLevelsUnlockedKey = "numLevelsUnlocked";
-
 	public bool simulateWebplayer = false;
-
-	private int mNumLevelsUnlocked = 1;
 
 	public bool IsWebplayer
 	{
@@ -24,14 +20,10 @@ public class GameSettings : ISingletonScript
 	{
 		get
 		{
-			return mNumLevelsUnlocked;
+			return NumLevels;
 		}
 		set
 		{
-			if((value >= 1) && (value <= NumLevels))
-			{
-				mNumLevelsUnlocked = value;
-			}
 		}
 	}
 	
@@ -46,18 +38,13 @@ public class GameSettings : ISingletonScript
 	
 	public void RetrieveFromSettings()
 	{
-		NumLevelsUnlocked = PlayerPrefs.GetInt(NumLevelsUnlockedKey, 1);
 	}
 	
 	public void SaveSettings()
 	{
-		PlayerPrefs.SetInt(NumLevelsUnlockedKey, NumLevelsUnlocked);
-		PlayerPrefs.Save();
 	}
 	
 	public void ClearSettings()
 	{
-		NumLevelsUnlocked = 1;
-		PlayerPrefs.DeleteAll();
 	}
 }

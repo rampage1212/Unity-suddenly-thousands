@@ -6914,7 +6914,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberIndicator: {fileID: 2097587863}
-  expectedNumber: 5
+  expectedNumber: 3
   enter: {fileID: 8300000, guid: 390ffd24e85007041b59ecb6947bfc49, type: 3}
   exit: {fileID: 8300000, guid: d7856f9d1ce01384bb0cb81eec19673d, type: 3}
 --- !u!114 &305260033
@@ -10927,7 +10927,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 6361ad08f43e59040aa23b0e16954719, type: 2}
       propertyPath: expectedNumber
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6361ad08f43e59040aa23b0e16954719, type: 2}
