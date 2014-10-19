@@ -15,10 +15,15 @@ public class TriggerMessage : MonoBehaviour
 	
 	public void OnTriggerEnter(Collider other)
 	{
-		if((mIsTriggered == false) && ((other.CompareTag("Player") == true) || (other.CompareTag("Player1") == true)))
+		if((mIsTriggered == false) && (other.CompareTag("Player") == true))
 		{
-			PauseMenu.ShowMessage(message);
-			mIsTriggered = true;
+            // Grab the controller
+            ThirdPersonUserControl controller = other.GetComponent<ThirdPersonUserControl>();
+            if((controller != null) && (controller.characterController.indicator == ThirdPersonCharacter.Indicator.Controlled))
+            {
+                PauseMenu.ShowMessage(message);
+                mIsTriggered = true;
+            }
 		}
 	}
 }
