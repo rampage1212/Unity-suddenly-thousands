@@ -3,7 +3,8 @@ using System.Collections.Generic;
 
 public class Door : MonoBehaviour
 {
-    public GameObject doorObject;
+    public Collider doorObject;
+    public Renderer[] doorRenderers;
     public AudioMutator doorAudio;
     public AudioClip doorOpen;
     public AudioClip doorClose;
@@ -24,11 +25,10 @@ public class Door : MonoBehaviour
             if(isOpen != value)
             {
                 isOpen = value;
-                doorObject.SetActive(!isOpen);
+                doorObject.enabled = !isOpen;
                 if(isOpen == true)
                 {
                     doorAudio.Audio.clip = doorOpen;
-                    doorAudio.Play();
                     if(triggerAllSwitches == true)
                     {
                         foreach(Switch update in triggeredSwitches)
@@ -40,8 +40,8 @@ public class Door : MonoBehaviour
                 else
                 {
                     doorAudio.Audio.clip = doorClose;
-                    doorAudio.Play();
                 }
+                doorAudio.Play();
             }
         }
     }
@@ -62,5 +62,10 @@ public class Door : MonoBehaviour
             triggeredSwitches.Remove(trigger);
         }
         IsOpen = (triggeredSwitches.Count >= numSwitches);
+    }
+
+    void Update()
+    {
+
     }
 }

@@ -63,7 +63,7 @@ GameObject:
   - 33: {fileID: 3300004}
   - 23: {fileID: 2300004}
   m_Layer: 0
-  m_Name: Quad
+  m_Name: DoorBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,10 +80,25 @@ GameObject:
   - 33: {fileID: 3300006}
   - 23: {fileID: 2300006}
   - 65: {fileID: 6500004}
+  m_Layer: 0
+  m_Name: DoorFront
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &100010
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400010}
   - 82: {fileID: 8200000}
   - 114: {fileID: 11400002}
   m_Layer: 0
-  m_Name: Quad
+  m_Name: Sound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,7 +111,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 8.14603425e-08, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.499999, y: 1.86264515e-08, z: 2.5}
+  m_LocalPosition: {x: 12.499999, y: 1.92412344e-08, z: 10.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400004}
@@ -151,8 +166,21 @@ Transform:
   m_LocalScale: {x: 5, y: 8, z: 1}
   m_Children:
   - {fileID: 400006}
+  - {fileID: 400010}
   m_Father: {fileID: 400000}
   m_RootOrder: 2
+--- !u!4 &400010
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100010}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -.5, z: 0}
+  m_LocalScale: {x: 0, y: 1, z: 0}
+  m_Children: []
+  m_Father: {fileID: 400008}
+  m_RootOrder: 1
 --- !u!23 &2300000
 Renderer:
   m_ObjectHideFlags: 1
@@ -302,18 +330,18 @@ AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100008}
+  m_GameObject: {fileID: 100010}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 6be6df9c39e4b7f448d382605b849a08, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: .400000006
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 5
+  MinDistance: 3.53233242
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -366,17 +394,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4658c047263c5dc48994ad1f78784748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorObject: {fileID: 100008}
+  doorObject: {fileID: 6500004}
+  doorRenderers:
+  - {fileID: 2300006}
+  - {fileID: 2300004}
   doorAudio: {fileID: 11400002}
-  doorOpen: {fileID: 8300000, guid: 6be6df9c39e4b7f448d382605b849a08, type: 3}
-  doorClose: {fileID: 8300000, guid: 88f31fb977a578147854124d826dabb7, type: 3}
+  doorOpen: {fileID: 8300000, guid: aaa271c8a9acd5d41a76d00a82493c23, type: 3}
+  doorClose: {fileID: 8300000, guid: c7d3c04245c2f884b8d11827a983f83a, type: 3}
   triggerAllSwitches: 0
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100008}
+  m_GameObject: {fileID: 100010}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 108c5039c6241934f8e453e3467e2dc6, type: 3}
