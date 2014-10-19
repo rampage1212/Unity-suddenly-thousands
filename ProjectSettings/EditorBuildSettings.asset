@@ -16,4 +16,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level04.unity
   - enabled: 1
+    path: Assets/Scenes/Level05.unity
+  - enabled: 1
     path: Assets/Scenes/Credits.unity

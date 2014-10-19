@@ -214,7 +214,7 @@ public class ThirdPersonCharacter : MonoBehaviour
 		
 		TurnTowardsCameraForward (); // makes the character face the way the camera is looking
 
-		PreventStandingInLowHeadroom (); // so the character's head doesn't penetrate a low ceiling
+		//PreventStandingInLowHeadroom (); // so the character's head doesn't penetrate a low ceiling
 
 	    ScaleCapsuleForCrouching (crouchInput); // so you can fit under low areas when crouching
 
