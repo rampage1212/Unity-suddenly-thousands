@@ -608,6 +608,7 @@ MonoBehaviour:
     value: {x: 0, y: 90, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &40024832
 Renderer:
   m_ObjectHideFlags: 0
@@ -944,7 +945,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1001 &55990530
 Prefab:
   m_ObjectHideFlags: 0
@@ -1247,6 +1248,7 @@ MonoBehaviour:
     value: {x: 0, y: 90, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &70769516
 TextMesh:
   serializedVersion: 3
@@ -3800,15 +3802,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400008, guid: 63bfc88d243d46b458fbc2990ab5759b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.29701793
+      value: .0728539228
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 63bfc88d243d46b458fbc2990ab5759b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -3.49362563e-05
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 63bfc88d243d46b458fbc2990ab5759b, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -16.8354378
+      value: -14.0000105
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 63bfc88d243d46b458fbc2990ab5759b, type: 2}
       propertyPath: m_LocalRotation.x
@@ -3829,6 +3831,10 @@ Prefab:
     - target: {fileID: 400008, guid: 63bfc88d243d46b458fbc2990ab5759b, type: 2}
       propertyPath: m_RootOrder
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400000, guid: 63bfc88d243d46b458fbc2990ab5759b, type: 2}
+      propertyPath: m_Constraints
+      value: 120
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 63bfc88d243d46b458fbc2990ab5759b, type: 2}
@@ -11728,6 +11734,7 @@ MonoBehaviour:
     value: {x: 0, y: 90, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &656257890
 Renderer:
   m_ObjectHideFlags: 0
@@ -16519,7 +16526,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5400000, guid: e68244dc9d256284b8328389536a4440, type: 2}
       propertyPath: m_Constraints
-      value: 112
+      value: 122
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: e68244dc9d256284b8328389536a4440, type: 2}
       propertyPath: m_RootOrder
@@ -17764,7 +17771,7 @@ Transform:
   - {fileID: 500904139}
   - {fileID: 1175812217}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!1 &1041990387
 GameObject:
   m_ObjectHideFlags: 0
@@ -18075,6 +18082,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &1064246998
 TextMesh:
   serializedVersion: 3
@@ -20433,6 +20441,7 @@ MonoBehaviour:
     value: {x: 0, y: 90, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &1200153260
 TextMesh:
   serializedVersion: 3
@@ -20698,6 +20707,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &1216013829
 TextMesh:
   serializedVersion: 3
@@ -22936,7 +22946,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!65 &1347665049
 BoxCollider:
@@ -22987,7 +22997,7 @@ Transform:
   m_PrefabInternal: {fileID: 205665366}
   m_GameObject: {fileID: 1347665044}
   m_LocalRotation: {x: 8.14603425e-08, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.29701793, y: 0, z: -16.8354378}
+  m_LocalPosition: {x: .0728539228, y: -3.49362563e-05, z: -14.0000105}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1102956633}
@@ -23353,6 +23363,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &1372663280
 TextMesh:
   serializedVersion: 3
@@ -24165,6 +24176,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &1427062046
 TextMesh:
   serializedVersion: 3
@@ -26964,6 +26976,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &1598144318
 TextMesh:
   serializedVersion: 3
@@ -27384,7 +27397,6 @@ MonoBehaviour:
   restartLevelButtonHeight: .150000006
   returnToMenuButtonHeight: .150000006
   popUpSettings:
-    appearLength: 20
     appearSpeed: 5
     popUpWidth: 800
     popUpHeight: 50
@@ -27468,8 +27480,8 @@ MonoBehaviour:
   pauseButtonWidth: 100
   pauseButtonHeight: 50
   boxWidth: .200000003
-  boxHeight: .100000001
-  margin: .0500000007
+  boxHeight: .075000003
+  margin: .100000001
   skin: {fileID: 11400000, guid: cecb4ab2e149fcf40b39716aea5acc12, type: 2}
   success: {fileID: 8300000, guid: 8d9fc6f2435811e4bbfdf0da71540bbd, type: 3}
   fail: {fileID: 8300000, guid: 34b737882b9dfb8468a20f93d649edc6, type: 3}
@@ -28606,7 +28618,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
 --- !u!1 &1660921708
 GameObject:
   m_ObjectHideFlags: 0
@@ -28706,6 +28718,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &1660955874
 Renderer:
   m_ObjectHideFlags: 0
@@ -30442,6 +30455,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &1789518127
 TextMesh:
   serializedVersion: 3
@@ -32401,7 +32415,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 122
   m_CollisionDetection: 0
 --- !u!65 &1894482565
 BoxCollider:
@@ -33813,7 +33827,7 @@ Transform:
   m_PrefabInternal: {fileID: 2084909793}
   m_GameObject: {fileID: 1962940990}
   m_LocalRotation: {x: 8.14603425e-08, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.779892, y: 0, z: -16.8354378}
+  m_LocalPosition: {x: -12.3538494, y: 5.00686951e-07, z: -14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1556179300}
@@ -33927,7 +33941,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!65 &1962940996
 BoxCollider:
@@ -35830,15 +35844,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400008, guid: 63bfc88d243d46b458fbc2990ab5759b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -10.779892
+      value: -12.3538494
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 63bfc88d243d46b458fbc2990ab5759b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 5.00686951e-07
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 63bfc88d243d46b458fbc2990ab5759b, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -16.8354378
+      value: -14
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 63bfc88d243d46b458fbc2990ab5759b, type: 2}
       propertyPath: m_LocalRotation.x
@@ -35859,6 +35873,10 @@ Prefab:
     - target: {fileID: 400008, guid: 63bfc88d243d46b458fbc2990ab5759b, type: 2}
       propertyPath: m_RootOrder
       value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400000, guid: 63bfc88d243d46b458fbc2990ab5759b, type: 2}
+      propertyPath: m_Constraints
+      value: 120
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 63bfc88d243d46b458fbc2990ab5759b, type: 2}

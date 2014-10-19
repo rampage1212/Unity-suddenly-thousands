@@ -911,6 +911,7 @@ MonoBehaviour:
     value: {x: 0, y: 90, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &70769516
 TextMesh:
   serializedVersion: 3
@@ -1235,12 +1236,12 @@ Rigidbody:
   m_GameObject: {fileID: 75614852}
   serializedVersion: 2
   m_Mass: 10
-  m_Drag: .0500000007
+  m_Drag: 1
   m_AngularDrag: .0500000007
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!65 &75614858
 BoxCollider:
@@ -5304,12 +5305,12 @@ Rigidbody:
   m_GameObject: {fileID: 292178434}
   serializedVersion: 2
   m_Mass: 10
-  m_Drag: .0500000007
+  m_Drag: 1
   m_AngularDrag: .0500000007
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!65 &292178440
 BoxCollider:
@@ -6968,6 +6969,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &363388215
 Renderer:
   m_ObjectHideFlags: 0
@@ -8447,6 +8449,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &432356414
 TextMesh:
   serializedVersion: 3
@@ -10336,6 +10339,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 5400000, guid: 63bfc88d243d46b458fbc2990ab5759b, type: 2}
+      propertyPath: m_Constraints
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400000, guid: 63bfc88d243d46b458fbc2990ab5759b, type: 2}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 63bfc88d243d46b458fbc2990ab5759b, type: 2}
   m_RootGameObject: {fileID: 292178434}
@@ -11216,6 +11227,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &631515154
 TextMesh:
   serializedVersion: 3
@@ -12455,12 +12467,12 @@ Rigidbody:
   m_GameObject: {fileID: 706053395}
   serializedVersion: 2
   m_Mass: 10
-  m_Drag: .0500000007
+  m_Drag: 1
   m_AngularDrag: .0500000007
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!65 &706053400
 BoxCollider:
@@ -12983,6 +12995,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &732881114
 TextMesh:
   serializedVersion: 3
@@ -14355,6 +14368,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &847664976
 Renderer:
   m_ObjectHideFlags: 0
@@ -18216,6 +18230,14 @@ Prefab:
     - target: {fileID: 400008, guid: 63bfc88d243d46b458fbc2990ab5759b, type: 2}
       propertyPath: m_RootOrder
       value: 46
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400000, guid: 63bfc88d243d46b458fbc2990ab5759b, type: 2}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400000, guid: 63bfc88d243d46b458fbc2990ab5759b, type: 2}
+      propertyPath: m_Constraints
+      value: 120
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 63bfc88d243d46b458fbc2990ab5759b, type: 2}
@@ -23012,6 +23034,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &1462347021
 Renderer:
   m_ObjectHideFlags: 0
@@ -23842,6 +23865,14 @@ Prefab:
     - target: {fileID: 400008, guid: 63bfc88d243d46b458fbc2990ab5759b, type: 2}
       propertyPath: m_RootOrder
       value: 39
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400000, guid: 63bfc88d243d46b458fbc2990ab5759b, type: 2}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400000, guid: 63bfc88d243d46b458fbc2990ab5759b, type: 2}
+      propertyPath: m_Constraints
+      value: 120
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 63bfc88d243d46b458fbc2990ab5759b, type: 2}
@@ -25404,7 +25435,6 @@ MonoBehaviour:
   restartLevelButtonHeight: .150000006
   returnToMenuButtonHeight: .150000006
   popUpSettings:
-    appearLength: 20
     appearSpeed: 5
     popUpWidth: 800
     popUpHeight: 50
@@ -25482,14 +25512,14 @@ MonoBehaviour:
   yOffset: 1
   raycastLayers:
     serializedVersion: 2
-    m_Bits: 4294964703
+    m_Bits: 4294964697
   lerpTranslate: 20
   lerpRotate: 20
   pauseButtonWidth: 100
   pauseButtonHeight: 50
   boxWidth: .200000003
-  boxHeight: .100000001
-  margin: .0500000007
+  boxHeight: .075000003
+  margin: .100000001
   skin: {fileID: 11400000, guid: cecb4ab2e149fcf40b39716aea5acc12, type: 2}
   success: {fileID: 8300000, guid: 8d9fc6f2435811e4bbfdf0da71540bbd, type: 3}
   fail: {fileID: 8300000, guid: 34b737882b9dfb8468a20f93d649edc6, type: 3}
@@ -26644,6 +26674,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &1672118724
 TextMesh:
   serializedVersion: 3
@@ -29473,6 +29504,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &1807771670
 TextMesh:
   serializedVersion: 3
@@ -31974,6 +32006,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &1960955106
 Renderer:
   m_ObjectHideFlags: 0
@@ -34192,6 +34225,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &2078903462
 TextMesh:
   serializedVersion: 3

@@ -1276,6 +1276,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &44115313
 TextMesh:
   serializedVersion: 3
@@ -1674,6 +1675,7 @@ MonoBehaviour:
     value: {x: 0, y: 90, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &70769516
 TextMesh:
   serializedVersion: 3
@@ -2306,6 +2308,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &100300888
 TextMesh:
   serializedVersion: 3
@@ -3041,7 +3044,7 @@ Transform:
   - {fileID: 833845328}
   - {fileID: 356192519}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
 --- !u!1 &135749000
 GameObject:
   m_ObjectHideFlags: 0
@@ -3117,6 +3120,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!1 &138381890
 GameObject:
   m_ObjectHideFlags: 0
@@ -4907,6 +4911,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &226869018
 Renderer:
   m_ObjectHideFlags: 0
@@ -8269,6 +8274,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &356192521
 Renderer:
   m_ObjectHideFlags: 0
@@ -9630,6 +9636,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &419367142
 Renderer:
   m_ObjectHideFlags: 0
@@ -9939,6 +9946,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &425426210
 Renderer:
   m_ObjectHideFlags: 0
@@ -10250,6 +10258,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &442189638
 Renderer:
   m_ObjectHideFlags: 0
@@ -13726,6 +13735,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &640586655
 TextMesh:
   serializedVersion: 3
@@ -14184,6 +14194,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!1 &667430595
 GameObject:
   m_ObjectHideFlags: 0
@@ -15598,7 +15609,7 @@ Transform:
   - {fileID: 1208970040}
   - {fileID: 640586653}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 6
 --- !u!114 &717593417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16213,6 +16224,7 @@ MonoBehaviour:
     value: {x: 0, y: 90, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &734568544
 TextMesh:
   serializedVersion: 3
@@ -21096,7 +21108,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5400000, guid: e68244dc9d256284b8328389536a4440, type: 2}
       propertyPath: m_Constraints
-      value: 112
+      value: 114
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e68244dc9d256284b8328389536a4440, type: 2}
@@ -22415,6 +22427,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &1021387025
 Renderer:
   m_ObjectHideFlags: 0
@@ -23382,6 +23395,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &1065742902
 TextMesh:
   serializedVersion: 3
@@ -30952,6 +30966,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &1416737539
 Renderer:
   m_ObjectHideFlags: 0
@@ -34381,7 +34396,7 @@ Transform:
   - {fileID: 1350891931}
   - {fileID: 2005173270}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 9
 --- !u!114 &1548091687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35474,7 +35489,6 @@ MonoBehaviour:
   restartLevelButtonHeight: .150000006
   returnToMenuButtonHeight: .150000006
   popUpSettings:
-    appearLength: 20
     appearSpeed: 5
     popUpWidth: 800
     popUpHeight: 50
@@ -35558,8 +35572,8 @@ MonoBehaviour:
   pauseButtonWidth: 100
   pauseButtonHeight: 50
   boxWidth: .200000003
-  boxHeight: .100000001
-  margin: .0500000007
+  boxHeight: .075000003
+  margin: .100000001
   skin: {fileID: 11400000, guid: cecb4ab2e149fcf40b39716aea5acc12, type: 2}
   success: {fileID: 8300000, guid: 8d9fc6f2435811e4bbfdf0da71540bbd, type: 3}
   fail: {fileID: 8300000, guid: 34b737882b9dfb8468a20f93d649edc6, type: 3}
@@ -35880,6 +35894,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &1620386518
 Renderer:
   m_ObjectHideFlags: 0
@@ -38081,6 +38096,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &1720667625
 Renderer:
   m_ObjectHideFlags: 0
@@ -39373,6 +39389,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &1773053410
 Renderer:
   m_ObjectHideFlags: 0
@@ -40569,6 +40586,7 @@ MonoBehaviour:
     value: {x: 0, y: 90, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &1825161920
 Renderer:
   m_ObjectHideFlags: 0
@@ -41930,7 +41948,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 114
   m_CollisionDetection: 0
 --- !u!65 &1894482565
 BoxCollider:
@@ -42326,6 +42344,7 @@ MonoBehaviour:
     value: {x: 0, y: 90, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &1911451237
 Renderer:
   m_ObjectHideFlags: 0
@@ -42965,7 +42984,7 @@ Transform:
   - {fileID: 1192332231}
   - {fileID: 226869015}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
 --- !u!114 &1940655461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45023,6 +45042,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &2005173273
 Renderer:
   m_ObjectHideFlags: 0
@@ -46393,7 +46413,7 @@ Transform:
   - {fileID: 1338422147}
   - {fileID: 1416737536}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
 --- !u!114 &2046325560
 MonoBehaviour:
   m_ObjectHideFlags: 0
