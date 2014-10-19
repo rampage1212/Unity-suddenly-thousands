@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 [RequireComponent(typeof(Collider))]
+[RequireComponent(typeof(AudioMutator))]
 public class Switch : MonoBehaviour
 {
     [Header("Common Properties")]
@@ -23,10 +24,17 @@ public class Switch : MonoBehaviour
     [Header("Trigger Properties")]
     public bool triggerOnce = true;
 
+    [Header("Sound")]
+    public AudioClip enter;
+    public AudioClip exit;
+    public AudioClip triggered;
+    public AudioClip untriggered;
+
     bool isTriggered = false;
     readonly HashSet<Collider> characters = new HashSet<Collider>();
     Color switchColor;
     Color wireColor;
+    AudioMutator audioCache = null;
 
     public bool IsTriggered
     {
@@ -48,6 +56,16 @@ public class Switch : MonoBehaviour
                     wireColor = (isTriggered ? wireTriggeredColor : wireNotTriggeredColor);
                 }
                 door.OnSwitchTriggerChanged(this);
+
+                if(isTriggered == true)
+                {
+                    audioCache.Audio.clip = triggered;
+                }
+                else
+                {
+                    audioCache.Audio.clip = untriggered;
+                }
+                audioCache.Play();
             }
         }
     }
@@ -64,6 +82,7 @@ public class Switch : MonoBehaviour
         numberIndicator.text = string.Format("0/{0}", expectedNumber);
         switchColor = switchNotTriggeredColor;
         wireColor = wireNotTriggeredColor;
+        audioCache = GetComponent<AudioMutator>();
         door.AddSwitch(this);
     }
 
@@ -90,6 +109,11 @@ public class Switch : MonoBehaviour
             {
                 IsTriggered = true;
             }
+            else if(IsTriggered == false)
+            {
+                audioCache.Audio.clip = enter;
+                audioCache.Play();
+            }
             if((triggerOnce == true) && (IsTriggered == true))
             {
                 numberIndicator.text = "-";
@@ -110,6 +134,12 @@ public class Switch : MonoBehaviour
             {
                 numberIndicator.text = string.Format("{0}/{1}", characters.Count, expectedNumber);
                 IsTriggered = false;
+            }
+            else if(IsTriggered == false)
+            {
+                numberIndicator.text = string.Format("{0}/{1}", characters.Count, expectedNumber);
+                audioCache.Audio.clip = exit;
+                audioCache.Play();
             }
         }
     }

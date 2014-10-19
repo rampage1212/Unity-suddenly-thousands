@@ -2,16 +2,22 @@
 using System.Collections.Generic;
 
 [RequireComponent(typeof(Collider))]
+[RequireComponent(typeof(AudioMutator))]
 public class GoalTrigger : MonoBehaviour
 {
     public TextMesh numberIndicator;
     public int expectedNumber = 1;
 
-    readonly HashSet<Collider> characters = new HashSet<Collider>();
+    [Header("Sound Effects")]
+    public AudioClip enter;
+    public AudioClip exit;
 
+    readonly HashSet<Collider> characters = new HashSet<Collider>();
+    AudioMutator mutator = null;
     void Start()
     {
         numberIndicator.text = string.Format("0/{0}", expectedNumber);
+        mutator = GetComponent<AudioMutator>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -24,6 +30,8 @@ public class GoalTrigger : MonoBehaviour
             {
                 MouseOrbitImproved.CurrentState = MouseOrbitImproved.State.Finished;
             }
+            mutator.Audio.clip = enter;
+            mutator.Play();
         }
     }
 
@@ -33,6 +41,8 @@ public class GoalTrigger : MonoBehaviour
         {
             characters.Remove(other);
             numberIndicator.text = string.Format("{0}/{1}", characters.Count, expectedNumber);
+            mutator.Audio.clip = exit;
+            mutator.Play();
         }
     }
 }
