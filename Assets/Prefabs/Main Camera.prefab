@@ -203,8 +203,8 @@ MonoBehaviour:
   pauseButtonWidth: 100
   pauseButtonHeight: 50
   boxWidth: .200000003
-  boxHeight: .100000001
-  margin: .0500000007
+  boxHeight: .075000003
+  margin: .100000001
   skin: {fileID: 11400000, guid: cecb4ab2e149fcf40b39716aea5acc12, type: 2}
   success: {fileID: 8300000, guid: 8d9fc6f2435811e4bbfdf0da71540bbd, type: 3}
   fail: {fileID: 8300000, guid: 34b737882b9dfb8468a20f93d649edc6, type: 3}
@@ -320,10 +320,9 @@ MonoBehaviour:
   restartLevelButtonHeight: .150000006
   returnToMenuButtonHeight: .150000006
   popUpSettings:
-    appearLength: 3
     appearSpeed: 5
     popUpWidth: 500
-    popUpHeight: 100
+    popUpHeight: 80
     popUpMargin: 20
   skin: {fileID: 11400000, guid: cecb4ab2e149fcf40b39716aea5acc12, type: 2}
 --- !u!114 &11400014

@@ -18,13 +18,12 @@ public class PauseMenu : MonoBehaviour
 	[System.Serializable]
 	public class PopUp
 	{
-		public float appearLength = 3f;
 		public float appearSpeed = 5f;
 		public int popUpWidth = 500;
 		public int popUpHeight = 100;
 		public int popUpMargin = 20;
 		
-		private float mTimeFirstAppeared = -1f;
+		private bool isUp = false;
 		private string mText = string.Empty;
 		private float mCurrentYCoordinate = -1f;
 		private int mTargetYCoordinate = 0;
@@ -33,7 +32,7 @@ public class PauseMenu : MonoBehaviour
 		{
 			get
 			{
-				return (mTimeFirstAppeared > 0);
+                return isUp;
 			}
 		}
 		
@@ -47,18 +46,18 @@ public class PauseMenu : MonoBehaviour
 		
 		public void ShowMessage(string message)
 		{
-			mTimeFirstAppeared = Time.time;
+            isUp = true;
 			mText = message;
 		}
 		
 		public void HideMessage()
 		{
-			mTimeFirstAppeared = -1f;
+            isUp = false;
 		}
 
 		public void ShowLastMessage()
 		{
-			mTimeFirstAppeared = Time.time;
+            isUp = true;
 		}
 		
 		public void Display(ref Rect buttonSize, float deltaTime, SceneTransition transition)
@@ -72,7 +71,7 @@ public class PauseMenu : MonoBehaviour
 				}
 				
 				// Find the target Y coordinate
-				if((transition == null) || (transition.State != SceneTransition.Transition.NotTransitioning) || ((Time.time - mTimeFirstAppeared) > appearLength))
+                if((transition == null) || (transition.State != SceneTransition.Transition.NotTransitioning) || (isUp == false))
 				{
 					mTargetYCoordinate = Screen.height;
 				}
@@ -90,13 +89,6 @@ public class PauseMenu : MonoBehaviour
 				buttonSize.width = popUpWidth;
 				buttonSize.height = popUpHeight;
 				GUI.Box(buttonSize, mText);
-				
-				// Check if we should stop displaying the message
-				if(((Time.time - mTimeFirstAppeared) > appearLength) && (mTargetYCoordinate <= Mathf.RoundToInt(mCurrentYCoordinate)))
-				{
-					mCurrentYCoordinate = -1f;
-					mTimeFirstAppeared = -1f;
-				}
 			}
 		}
 	}

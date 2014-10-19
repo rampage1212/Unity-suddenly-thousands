@@ -892,6 +892,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &18574043
 Renderer:
   m_ObjectHideFlags: 0
@@ -8121,6 +8122,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &214364591
 Renderer:
   m_ObjectHideFlags: 0
@@ -14731,6 +14733,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &399713008
 Renderer:
   m_ObjectHideFlags: 0
@@ -16099,6 +16102,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &437856713
 Renderer:
   m_ObjectHideFlags: 0
@@ -16785,6 +16789,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &464148385
 TextMesh:
   serializedVersion: 3
@@ -17279,6 +17284,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &476807466
 TextMesh:
   serializedVersion: 3
@@ -18457,6 +18463,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &506120966
 TextMesh:
   serializedVersion: 3
@@ -18537,6 +18544,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &508772481
 TextMesh:
   serializedVersion: 3
@@ -19562,6 +19570,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &528395450
 Renderer:
   m_ObjectHideFlags: 0
@@ -20948,6 +20957,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &563702646
 Renderer:
   m_ObjectHideFlags: 0
@@ -21493,6 +21503,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &573952269
 TextMesh:
   serializedVersion: 3
@@ -22436,6 +22447,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &590691686
 TextMesh:
   serializedVersion: 3
@@ -23104,6 +23116,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &603103583
 Renderer:
   m_ObjectHideFlags: 0
@@ -41980,6 +41993,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &1083763682
 TextMesh:
   serializedVersion: 3
@@ -42326,6 +42340,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &1094295917
 TextMesh:
   serializedVersion: 3
@@ -44416,6 +44431,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &1160524822
 Renderer:
   m_ObjectHideFlags: 0
@@ -45951,6 +45967,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &1212465897
 TextMesh:
   serializedVersion: 3
@@ -48387,6 +48404,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &1300792777
 TextMesh:
   serializedVersion: 3
@@ -48781,6 +48799,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &1311223153
 Renderer:
   m_ObjectHideFlags: 0
@@ -56697,6 +56716,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &1519787790
 TextMesh:
   serializedVersion: 3
@@ -60847,6 +60867,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &1636229258
 TextMesh:
   serializedVersion: 3
@@ -66031,6 +66052,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &1783713535
 TextMesh:
   serializedVersion: 3
@@ -66881,6 +66903,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &1797875543
 Renderer:
   m_ObjectHideFlags: 0
@@ -71991,6 +72014,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!1 &1948219042
 GameObject:
   m_ObjectHideFlags: 0
@@ -72068,6 +72092,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &1948831643
 TextMesh:
   serializedVersion: 3
@@ -72515,6 +72540,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &1964796611
 Renderer:
   m_ObjectHideFlags: 0
@@ -73372,6 +73398,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &1986499506
 TextMesh:
   serializedVersion: 3
@@ -75517,6 +75544,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &2032313860
 Renderer:
   m_ObjectHideFlags: 0
@@ -77038,6 +77066,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &2083747699
 Renderer:
   m_ObjectHideFlags: 0
@@ -79335,6 +79364,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &2142776087
 Renderer:
   m_ObjectHideFlags: 0
