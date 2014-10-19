@@ -33,6 +33,7 @@ public class MouseOrbitImproved : MonoBehaviour
 	public float distanceMin = .5f;
 	public float distanceMax = 15f;
 	public float yOffset = 3f;
+    public LayerMask raycastLayers;
 
 	[Header("Lerp")]
 	public float lerpTranslate = 5f;
@@ -346,7 +347,7 @@ public class MouseOrbitImproved : MonoBehaviour
 		Quaternion rotation = Quaternion.Euler (y, x, 0);
 		distance = Mathf.Clamp (distance - Input.GetAxis ("Mouse Y") * zSpeed, distanceMin, distanceMax);
 		RaycastHit hit;
-		if (Physics.Linecast (target.position, transform.position, out hit)) {
+        if (Physics.Linecast (target.position, transform.position, out hit, raycastLayers)) {
 			distance -= hit.distance;
 		}
 		Vector3 negDistance = new Vector3 (0.0f, yOffset, -distance);
