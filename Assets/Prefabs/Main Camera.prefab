@@ -197,7 +197,7 @@ MonoBehaviour:
   yOffset: 1
   raycastLayers:
     serializedVersion: 2
-    m_Bits: 4294964703
+    m_Bits: 4294964697
   lerpTranslate: 20
   lerpRotate: 20
   pauseButtonWidth: 100
