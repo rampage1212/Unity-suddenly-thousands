@@ -59714,12 +59714,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51d7f5fc432b314f91540f3b715a350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startButtonPosition: .400000006
+  startButtonPosition: .25999999
   endButtonPosition: .949999988
   buttonWidth: .449999988
   buttonMargin: .0199999996
-  smallButtonStartPosition: .850000024
-  smallButtonEndPosition: 1
+  smallButtonStartPosition: .889999986
+  smallButtonEndPosition: .970000029
   smallButtonWidth: .200000003
   titleGuiText:
   - {fileID: 1979534524}
