@@ -1,1 +1,1 @@
-This projects takes assets from numerous sources.  Please consult the game credits.
+This projects takes assets from numerous sources.  Please consult check the LICENSE.txt files in each folder for more details.

@@ -1,0 +1,4 @@
+All assets under this folder and subfolders (unless otherwise noted) are from Sou Chen Ki, and available here:
+https://www.assetstore.unity3d.com/en/#!/content/4331
+
+Please consult the individual above for license.
