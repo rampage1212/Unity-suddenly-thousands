@@ -1,0 +1,4 @@
+All assets under this folder and subfolders are from Bunt Games, and available here:
+https://www.assetstore.unity3d.com/en/#!/content/17222
+
+Please consult the company above for license.
