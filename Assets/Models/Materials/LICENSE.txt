@@ -1,0 +1,13 @@
+The following files are Licensed under:
+
+Team Ichabot Crane
+Creative Commons: Attribution-Noncommercial-Share Alike 3.0
+http://creativecommons.org/licenses/by-nc-sa/3.0/
+
+The files are:
+
+BlackFont.mat
+BlackFontSmall.mat
+MovableCubeFont.mat
+WhiteFont.mat
+WhiteFontSmall.mat

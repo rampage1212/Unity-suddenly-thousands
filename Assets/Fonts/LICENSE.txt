@@ -1,0 +1,9 @@
+BellotaBold.otf and BellotaSmall.otf are licensed under:
+Kemie Guaida
+SIL Open Font License (OFL) v1.1
+http://scripts.sil.org/OFL
+
+Sansation_Light.ttf and Sansation_Light_black.ttf are licensed under:
+Bernd Montag
+SIL Open Font License (OFL) v1.1
+http://scripts.sil.org/OFL

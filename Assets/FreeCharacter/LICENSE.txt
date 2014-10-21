@@ -1,0 +1,4 @@
+All assets under this folder and subfolders are from Character Ink., and available here:
+https://www.assetstore.unity3d.com/en/#!/content/12980
+
+Please consult the company above for license.

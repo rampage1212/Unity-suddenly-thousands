@@ -1,0 +1,2 @@
+All assets under this folder and subfolders are pre-packaged scripts in the Unity game engine.
+Please consult the company above for license.

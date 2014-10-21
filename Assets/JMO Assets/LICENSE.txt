@@ -1,0 +1,5 @@
+All assets under this folder and subfolders are from Jean Moreno (JMO), and available here:
+https://www.assetstore.unity3d.com/en/#!/content/8221
+https://www.assetstore.unity3d.com/en/#!/content/3926
+
+Please consult the company above for license.
