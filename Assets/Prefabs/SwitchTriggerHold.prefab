@@ -275,10 +275,10 @@ MonoBehaviour:
   numberIndicator: {fileID: 10200000}
   lerpColor: 10
   switchRenderer: {fileID: 2300000}
-  switchTriggeredColor: {r: .397327304, g: .816176474, b: .156033739, a: 1}
+  switchTriggeredColor: {r: .958015144, g: .992647052, b: .364943773, a: 1}
   switchNotTriggeredColor: {r: .205990463, g: .808896899, b: .933823526, a: 1}
   wireRenderer: {fileID: 12000000}
-  wireTriggeredColor: {r: .396078438, g: .811764717, b: .156862751, a: 0}
+  wireTriggeredColor: {r: .952941179, g: .988235295, b: .36470589, a: 0}
   wireNotTriggeredColor: {r: .20784314, g: .80392158, b: .929411769, a: 1}
   triggerOnce: 0
   enter: {fileID: 8300000, guid: 390ffd24e85007041b59ecb6947bfc49, type: 3}
@@ -303,6 +303,7 @@ MonoBehaviour:
     value: {x: 0, y: 90, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
