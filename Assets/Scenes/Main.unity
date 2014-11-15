@@ -796,6 +796,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &18574043
 Renderer:
   m_ObjectHideFlags: 0
@@ -1244,7 +1245,7 @@ Transform:
   - {fileID: 1193229962}
   - {fileID: 1460257712}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!114 &30538073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1963,7 +1964,7 @@ Transform:
   - {fileID: 1038397836}
   - {fileID: 476807464}
   m_Father: {fileID: 0}
-  m_RootOrder: 33
+  m_RootOrder: 34
 --- !u!95 &50501587
 Animator:
   serializedVersion: 3
@@ -2796,7 +2797,7 @@ GameObject:
   - 23: {fileID: 70769517}
   - 102: {fileID: 70769516}
   - 114: {fileID: 70769515}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2835,6 +2836,7 @@ MonoBehaviour:
     value: {x: 0, y: 90, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &70769516
 TextMesh:
   serializedVersion: 3
@@ -4972,7 +4974,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 166666492}
   - 120: {fileID: 166666493}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6222,6 +6224,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &214364591
 Renderer:
   m_ObjectHideFlags: 0
@@ -7468,7 +7471,7 @@ Transform:
   - {fileID: 1996641310}
   - {fileID: 1212465895}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
 --- !u!95 &266386903
 Animator:
   serializedVersion: 3
@@ -8262,7 +8265,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
 --- !u!1 &290038005
 GameObject:
   m_ObjectHideFlags: 0
@@ -8389,7 +8392,7 @@ GameObject:
   - 23: {fileID: 294562286}
   - 102: {fileID: 294562283}
   - 114: {fileID: 294562285}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Number
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8449,6 +8452,7 @@ MonoBehaviour:
     value: {x: 0, y: 90, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &294562286
 Renderer:
   m_ObjectHideFlags: 0
@@ -8890,7 +8894,7 @@ GameObject:
   - 114: {fileID: 305260032}
   - 82: {fileID: 305260034}
   - 114: {fileID: 305260033}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Goal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10870,7 +10874,7 @@ Transform:
   - {fileID: 500345101}
   - {fileID: 713302306}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!114 &374732667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11207,7 +11211,7 @@ Transform:
   - {fileID: 1977942853}
   - {fileID: 2083747696}
   m_Father: {fileID: 0}
-  m_RootOrder: 37
+  m_RootOrder: 38
 --- !u!95 &390416123
 Animator:
   serializedVersion: 3
@@ -12289,7 +12293,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 424345151}
   - 120: {fileID: 424345149}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12829,6 +12833,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &437856713
 Renderer:
   m_ObjectHideFlags: 0
@@ -13650,6 +13655,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &464148385
 TextMesh:
   serializedVersion: 3
@@ -13909,6 +13915,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &476807466
 TextMesh:
   serializedVersion: 3
@@ -14783,7 +14790,7 @@ Transform:
   - {fileID: 835166959}
   - {fileID: 1083763680}
   m_Father: {fileID: 0}
-  m_RootOrder: 32
+  m_RootOrder: 33
 --- !u!95 &505923802
 Animator:
   serializedVersion: 3
@@ -15002,6 +15009,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &508772481
 TextMesh:
   serializedVersion: 3
@@ -15792,6 +15800,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &528395450
 Renderer:
   m_ObjectHideFlags: 0
@@ -16198,7 +16207,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 542625615}
   - 120: {fileID: 542625614}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16389,7 +16398,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
 --- !u!1 &547348942
 GameObject:
   m_ObjectHideFlags: 0
@@ -17014,6 +17023,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &563702646
 Renderer:
   m_ObjectHideFlags: 0
@@ -17575,6 +17585,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &573952269
 TextMesh:
   serializedVersion: 3
@@ -17806,7 +17817,7 @@ Transform:
   - {fileID: 428680072}
   - {fileID: 590691684}
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 30
 --- !u!95 &582363895
 Animator:
   serializedVersion: 3
@@ -18335,6 +18346,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &590691686
 TextMesh:
   serializedVersion: 3
@@ -18891,7 +18903,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 614341364}
   - 120: {fileID: 614341363}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19210,7 +19222,7 @@ Transform:
   - {fileID: 704628970}
   - {fileID: 214364588}
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 29
 --- !u!95 &626226331
 Animator:
   serializedVersion: 3
@@ -19952,7 +19964,7 @@ Transform:
   - {fileID: 704765213}
   - {fileID: 1797875540}
   m_Father: {fileID: 0}
-  m_RootOrder: 36
+  m_RootOrder: 37
 --- !u!95 &640334473
 Animator:
   serializedVersion: 3
@@ -20650,7 +20662,7 @@ Transform:
   - {fileID: 1944825920}
   - {fileID: 1094295915}
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 25
 --- !u!95 &655519483
 Animator:
   serializedVersion: 3
@@ -21026,7 +21038,7 @@ GameObject:
   - 114: {fileID: 664099804}
   - 82: {fileID: 664099807}
   - 114: {fileID: 664099806}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SwitchTriggerOnce
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21046,7 +21058,7 @@ Transform:
   - {fileID: 1687509561}
   - {fileID: 1060782564}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!114 &664099804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21445,7 +21457,7 @@ Transform:
   - {fileID: 1234778028}
   - {fileID: 491478759}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
 --- !u!114 &672748598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24653,7 +24665,7 @@ Transform:
   - {fileID: 1582074097}
   - {fileID: 1783713533}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
 --- !u!95 &766088440
 Animator:
   serializedVersion: 3
@@ -25122,7 +25134,7 @@ Transform:
   - {fileID: 336497581}
   - {fileID: 1613771823}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
 --- !u!1 &773431300
 GameObject:
   m_ObjectHideFlags: 0
@@ -25328,7 +25340,7 @@ Transform:
   - {fileID: 119385234}
   - {fileID: 1964796608}
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
 --- !u!95 &784979106
 Animator:
   serializedVersion: 3
@@ -26760,7 +26772,7 @@ Transform:
   - {fileID: 1307209180}
   - {fileID: 2142776084}
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 26
 --- !u!95 &850513778
 Animator:
   serializedVersion: 3
@@ -27230,7 +27242,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 49d225a8083c6bf409cb0d5d1f856b2b, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 49d225a8083c6bf409cb0d5d1f856b2b, type: 3}
       propertyPath: m_CastShadows
@@ -29337,7 +29349,7 @@ Transform:
   - {fileID: 1730061706}
   - {fileID: 1986499504}
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 28
 --- !u!95 &959481298
 Animator:
   serializedVersion: 3
@@ -30684,7 +30696,7 @@ Transform:
   - {fileID: 1094563947}
   - {fileID: 573952267}
   m_Father: {fileID: 0}
-  m_RootOrder: 38
+  m_RootOrder: 39
 --- !u!95 &998832288
 Animator:
   serializedVersion: 3
@@ -31944,7 +31956,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1060782564}
   - 120: {fileID: 1060782563}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32956,6 +32968,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &1083763682
 TextMesh:
   serializedVersion: 3
@@ -33225,6 +33238,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &1094295917
 TextMesh:
   serializedVersion: 3
@@ -33408,7 +33422,7 @@ GameObject:
   - 23: {fileID: 1099195430}
   - 102: {fileID: 1099195429}
   - 114: {fileID: 1099195431}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Number
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33489,6 +33503,7 @@ MonoBehaviour:
     value: {x: 0, y: 90, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!1 &1099380621
 GameObject:
   m_ObjectHideFlags: 0
@@ -34659,7 +34674,7 @@ GameObject:
   - 114: {fileID: 1143847473}
   - 82: {fileID: 1143847477}
   - 114: {fileID: 1143847476}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SwitchTriggerMultiple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34719,7 +34734,7 @@ Transform:
   - {fileID: 1241804142}
   - {fileID: 614341364}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
 --- !u!114 &1143847476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35246,7 +35261,7 @@ GameObject:
   - 4: {fileID: 1160690197}
   - 33: {fileID: 1160690198}
   - 23: {fileID: 1160690196}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36585,6 +36600,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &1212465897
 TextMesh:
   serializedVersion: 3
@@ -36998,7 +37014,7 @@ Transform:
   - {fileID: 2044015707}
   - {fileID: 1101607522}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!1 &1228160529
 GameObject:
   m_ObjectHideFlags: 0
@@ -37409,7 +37425,7 @@ GameObject:
   - 4: {fileID: 1241804142}
   - 33: {fileID: 1241804143}
   - 23: {fileID: 1241804141}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37582,7 +37598,7 @@ GameObject:
   - 23: {fileID: 1246574116}
   - 102: {fileID: 1246574115}
   - 114: {fileID: 1246574114}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Number
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37620,6 +37636,7 @@ MonoBehaviour:
     value: {x: 0, y: 90, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &1246574115
 TextMesh:
   serializedVersion: 3
@@ -38512,7 +38529,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!114 &1279999767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39133,6 +39150,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &1300792777
 TextMesh:
   serializedVersion: 3
@@ -40712,7 +40730,7 @@ Transform:
   - {fileID: 1409659815}
   - {fileID: 528395447}
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 31
 --- !u!95 &1362514961
 Animator:
   serializedVersion: 3
@@ -42030,7 +42048,7 @@ GameObject:
   - 114: {fileID: 1406993292}
   - 82: {fileID: 1406993295}
   - 114: {fileID: 1406993294}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SwitchTriggerMultiple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42050,7 +42068,7 @@ Transform:
   - {fileID: 1409683043}
   - {fileID: 166666492}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
 --- !u!114 &1406993292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42319,7 +42337,7 @@ GameObject:
   - 4: {fileID: 1409683043}
   - 33: {fileID: 1409683045}
   - 23: {fileID: 1409683044}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44099,7 +44117,7 @@ Transform:
   - {fileID: 1371338497}
   - {fileID: 464148383}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
 --- !u!95 &1467143349
 Animator:
   serializedVersion: 3
@@ -44641,7 +44659,7 @@ Transform:
   - {fileID: 544530797}
   - {fileID: 563702643}
   m_Father: {fileID: 0}
-  m_RootOrder: 35
+  m_RootOrder: 36
 --- !u!95 &1479817907
 Animator:
   serializedVersion: 3
@@ -46705,7 +46723,7 @@ GameObject:
   - 23: {fileID: 1565118569}
   - 102: {fileID: 1565118568}
   - 114: {fileID: 1565118567}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Number
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46731,6 +46749,7 @@ MonoBehaviour:
     value: {x: 0, y: 90, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &1565118568
 TextMesh:
   serializedVersion: 3
@@ -47065,7 +47084,7 @@ GameObject:
   - 4: {fileID: 1572601886}
   - 33: {fileID: 1572601888}
   - 23: {fileID: 1572601887}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48123,10 +48142,9 @@ MonoBehaviour:
   restartLevelButtonHeight: .150000006
   returnToMenuButtonHeight: .150000006
   popUpSettings:
-    appearLength: 3
     appearSpeed: 5
     popUpWidth: 500
-    popUpHeight: 100
+    popUpHeight: 80
     popUpMargin: 20
   skin: {fileID: 11400000, guid: cecb4ab2e149fcf40b39716aea5acc12, type: 2}
 --- !u!20 &1609850409
@@ -48201,14 +48219,14 @@ MonoBehaviour:
   yOffset: 1
   raycastLayers:
     serializedVersion: 2
-    m_Bits: 4294964703
+    m_Bits: 4294964697
   lerpTranslate: 20
   lerpRotate: 20
   pauseButtonWidth: 100
   pauseButtonHeight: 50
   boxWidth: .200000003
-  boxHeight: .100000001
-  margin: .0500000007
+  boxHeight: .075000003
+  margin: .100000001
   skin: {fileID: 11400000, guid: cecb4ab2e149fcf40b39716aea5acc12, type: 2}
   success: {fileID: 8300000, guid: 8d9fc6f2435811e4bbfdf0da71540bbd, type: 3}
   fail: {fileID: 8300000, guid: 34b737882b9dfb8468a20f93d649edc6, type: 3}
@@ -48874,7 +48892,7 @@ GameObject:
   - 4: {fileID: 1626285503}
   - 33: {fileID: 1626285502}
   - 23: {fileID: 1626285501}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48986,7 +49004,7 @@ Transform:
   - {fileID: 533182967}
   - {fileID: 2032313857}
   m_Father: {fileID: 0}
-  m_RootOrder: 39
+  m_RootOrder: 40
 --- !u!95 &1626734652
 Animator:
   serializedVersion: 3
@@ -50118,7 +50136,7 @@ Transform:
   - {fileID: 687742150}
   - {fileID: 18574040}
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 27
 --- !u!95 &1673328456
 Animator:
   serializedVersion: 3
@@ -50700,7 +50718,7 @@ Transform:
   - {fileID: 618478977}
   - {fileID: 437856710}
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 32
 --- !u!95 &1684838034
 Animator:
   serializedVersion: 3
@@ -50975,7 +50993,7 @@ GameObject:
   - 4: {fileID: 1687509561}
   - 33: {fileID: 1687509563}
   - 23: {fileID: 1687509562}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53188,7 +53206,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1772065163}
   - 120: {fileID: 1772065164}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53481,6 +53499,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &1783713535
 TextMesh:
   serializedVersion: 3
@@ -53560,7 +53579,7 @@ Transform:
   - {fileID: 2007160802}
   - {fileID: 508772483}
   m_Father: {fileID: 0}
-  m_RootOrder: 34
+  m_RootOrder: 35
 --- !u!95 &1783740717
 Animator:
   serializedVersion: 3
@@ -53782,7 +53801,7 @@ GameObject:
   - 114: {fileID: 1786631209}
   - 82: {fileID: 1786631213}
   - 114: {fileID: 1786631212}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SwitchTriggerHold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53842,7 +53861,7 @@ Transform:
   - {fileID: 1160690197}
   - {fileID: 542625615}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
 --- !u!114 &1786631212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54269,6 +54288,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &1797875543
 Renderer:
   m_ObjectHideFlags: 0
@@ -55389,7 +55409,7 @@ Transform:
   - {fileID: 819007714}
   - {fileID: 443969709}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!114 &1835630025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56447,7 +56467,7 @@ GameObject:
   - 23: {fileID: 1879703584}
   - 102: {fileID: 1879703583}
   - 114: {fileID: 1879703582}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Number
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56473,6 +56493,7 @@ MonoBehaviour:
     value: {x: 0, y: 90, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &1879703583
 TextMesh:
   serializedVersion: 3
@@ -57538,7 +57559,7 @@ GameObject:
   - 23: {fileID: 1912530681}
   - 102: {fileID: 1912530678}
   - 114: {fileID: 1912530680}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Number
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57598,6 +57619,7 @@ MonoBehaviour:
     value: {x: 0, y: 90, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &1912530681
 Renderer:
   m_ObjectHideFlags: 0
@@ -58327,7 +58349,7 @@ Transform:
   - {fileID: 330020092}
   - {fileID: 1946503580}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
 --- !u!95 &1929895923
 Animator:
   serializedVersion: 3
@@ -59232,6 +59254,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!1 &1949862703
 GameObject:
   m_ObjectHideFlags: 0
@@ -59525,6 +59548,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &1964796611
 Renderer:
   m_ObjectHideFlags: 0
@@ -60219,6 +60243,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!102 &1986499506
 TextMesh:
   serializedVersion: 3
@@ -60410,7 +60435,7 @@ Transform:
   - {fileID: 953601883}
   - {fileID: 1300792775}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
 --- !u!95 &1989327439
 Animator:
   serializedVersion: 3
@@ -61207,7 +61232,7 @@ GameObject:
   - 114: {fileID: 2006555856}
   - 82: {fileID: 2006555858}
   - 114: {fileID: 2006555857}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SwitchTriggerOnce
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61227,7 +61252,7 @@ Transform:
   - {fileID: 1626285503}
   - {fileID: 424345151}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!65 &2006555855
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -61502,7 +61527,7 @@ GameObject:
   - 114: {fileID: 2009885742}
   - 82: {fileID: 2009885745}
   - 114: {fileID: 2009885744}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SwitchTriggerHold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61522,7 +61547,7 @@ Transform:
   - {fileID: 1572601886}
   - {fileID: 1772065163}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
 --- !u!114 &2009885742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61885,6 +61910,54 @@ SkinnedMeshRenderer:
     m_Center: {x: -.000223278999, y: .892648697, z: .00509280711}
     m_Extent: {x: .76097554, y: .95374918, z: .228061885}
   m_DirtyAABB: 0
+--- !u!1001 &2016321486
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 93e86b57e56570d46814839867bf9a52, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 12.9999971
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 93e86b57e56570d46814839867bf9a52, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: .000214282423
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 93e86b57e56570d46814839867bf9a52, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -11.9999828
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 93e86b57e56570d46814839867bf9a52, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 8.14603425e-08
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 93e86b57e56570d46814839867bf9a52, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 93e86b57e56570d46814839867bf9a52, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 93e86b57e56570d46814839867bf9a52, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 93e86b57e56570d46814839867bf9a52, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 93e86b57e56570d46814839867bf9a52, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eae9c11350249284e8400a100179e0b2, type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 93e86b57e56570d46814839867bf9a52, type: 2}
+  m_RootGameObject: {fileID: 2080558795}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &2016941960
 GameObject:
   m_ObjectHideFlags: 0
@@ -62207,6 +62280,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &2032313860
 Renderer:
   m_ObjectHideFlags: 0
@@ -63583,6 +63657,96 @@ Transform:
   - {fileID: 564042804}
   m_Father: {fileID: 2123533622}
   m_RootOrder: 0
+--- !u!1 &2080558795
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 93e86b57e56570d46814839867bf9a52, type: 2}
+  m_PrefabInternal: {fileID: 2016321486}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2080558800}
+  - 33: {fileID: 2080558799}
+  - 23: {fileID: 2080558798}
+  - 65: {fileID: 2080558797}
+  - 114: {fileID: 2080558796}
+  m_Layer: 0
+  m_Name: Wall 8x8x1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2080558796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 93e86b57e56570d46814839867bf9a52,
+    type: 2}
+  m_PrefabInternal: {fileID: 2016321486}
+  m_GameObject: {fileID: 2080558795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb8713472d66c314b8e2c64b6c6dc67c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallRenderer: {fileID: 2080558798}
+  normalMaterial: {fileID: 2100000, guid: eae9c11350249284e8400a100179e0b2, type: 2}
+  xRayMaterial: {fileID: 2100000, guid: 16e28bffb639852458329fcf3881b64d, type: 2}
+  alphaCutoff: .899999976
+  radius: .100000001
+--- !u!65 &2080558797
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500000, guid: 93e86b57e56570d46814839867bf9a52,
+    type: 2}
+  m_PrefabInternal: {fileID: 2016321486}
+  m_GameObject: {fileID: 2080558795}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.00002909, y: 6.00006771, z: 1.00000858}
+  m_Center: {x: 1.21593475e-05, y: 2.99979687, z: .499987811}
+--- !u!23 &2080558798
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: 93e86b57e56570d46814839867bf9a52,
+    type: 2}
+  m_PrefabInternal: {fileID: 2016321486}
+  m_GameObject: {fileID: 2080558795}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: eae9c11350249284e8400a100179e0b2, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &2080558799
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300000, guid: 93e86b57e56570d46814839867bf9a52,
+    type: 2}
+  m_PrefabInternal: {fileID: 2016321486}
+  m_GameObject: {fileID: 2080558795}
+  m_Mesh: {fileID: 4300000, guid: b5290684820a94548bedb95083785116, type: 3}
+--- !u!4 &2080558800
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 93e86b57e56570d46814839867bf9a52, type: 2}
+  m_PrefabInternal: {fileID: 2016321486}
+  m_GameObject: {fileID: 2080558795}
+  m_LocalRotation: {x: 8.14603425e-08, y: 0, z: -0, w: 1}
+  m_LocalPosition: {x: 12.9999971, y: .000214282423, z: -11.9999828}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
 --- !u!1 &2081865274
 GameObject:
   m_ObjectHideFlags: 0
@@ -63681,6 +63845,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &2083747699
 Renderer:
   m_ObjectHideFlags: 0
@@ -64048,7 +64213,7 @@ GameObject:
   - 4: {fileID: 2097587865}
   - 23: {fileID: 2097587864}
   - 102: {fileID: 2097587863}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Number
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65648,6 +65813,7 @@ MonoBehaviour:
     value: {x: 0, y: 180, z: 0}
     space: 1
   ignoreTimescale: 0
+  useFixedUpdate: 0
 --- !u!23 &2142776087
 Renderer:
   m_ObjectHideFlags: 0

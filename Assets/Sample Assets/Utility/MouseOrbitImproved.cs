@@ -58,10 +58,12 @@ public class MouseOrbitImproved : MonoBehaviour
 	public readonly HashSet<ThirdPersonUserControl> allLivingCharacters = new HashSet<ThirdPersonUserControl>();
 	public readonly HashSet<ThirdPersonUserControl> standByCharacters = new HashSet<ThirdPersonUserControl>();
 	public readonly List<ThirdPersonUserControl> activeCharacters = new List<ThirdPersonUserControl>();
+    public readonly Dictionary<Collider, XRayWall> seeThroughWalls = new Dictionary<Collider, XRayWall>();
     private int controlledIndex = 0;
     private float switchTime = 0;
     private Rect buttonRect = new Rect(0, 0, 0, 0);
     AudioMutator audioCache;
+    XRayWall lastWall = null, currentWall = null;
 
     public AudioMutator CachedAudio
     {
@@ -348,10 +350,25 @@ public class MouseOrbitImproved : MonoBehaviour
 		distance = Mathf.Clamp (distance - Input.GetAxis ("Mouse Y") * zSpeed, distanceMin, distanceMax);
 
 		RaycastHit hit;
-        //if (Physics.Linecast (target.position, transform.position, out hit, raycastLayers))
+        if ((Physics.Linecast(transform.position, target.position, out hit, raycastLayers) == true) &&
+            (seeThroughWalls.TryGetValue(hit.collider, out currentWall) == true))
         {
-			//distance -= hit.distance;
+            // Make the casted wall see through
+            currentWall.MakeWallSeeThrough(hit);
 		}
+        else
+        {
+            currentWall = null;
+        }
+
+        // Check if the last wall is not the same as the current wall
+        if((lastWall != null) && (currentWall != lastWall))
+        {
+            lastWall.MakeWallNormal();
+        }
+
+        // Setup the last wall
+        lastWall = currentWall;
 
 		Vector3 negDistance = new Vector3 (0.0f, yOffset, -distance);
 		Vector3 position = rotation * negDistance + target.position;
