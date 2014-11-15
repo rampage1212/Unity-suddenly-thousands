@@ -1,4 +1,0 @@
-All assets under this folder and subfolders are from Alpaca Sound, and available here:
-https://www.assetstore.unity3d.com/en/#!/content/16314
-
-Please consult the company above for license.
