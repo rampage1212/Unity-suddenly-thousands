@@ -37,6 +37,7 @@ public class RecruitmentCollider : MonoBehaviour
     bool InRange(ThirdPersonUserControl controller)
     {
         distance = controls.target.position - controller.position;
+        distance.y = 0;
         return (distance.sqrMagnitude < (radius * radius));
     }
 }
