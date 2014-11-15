@@ -30,7 +30,7 @@ public class Switch : MonoBehaviour
     public AudioClip triggered;
     public AudioClip untriggered;
 
-    bool isTriggered = false;
+    bool isTriggered = false, isDisplayingOK = false;
     readonly HashSet<Collider> characters = new HashSet<Collider>();
     Color switchColor;
     Color wireColor;
@@ -117,6 +117,7 @@ public class Switch : MonoBehaviour
             if((triggerOnce == true) && (IsTriggered == true))
             {
                 numberIndicator.text = "OK";
+                isDisplayingOK = true;
             }
             else
             {
@@ -130,16 +131,18 @@ public class Switch : MonoBehaviour
         if(other.CompareTag("Player") == true)
         {
             characters.Remove(other);
-            if((triggerOnce == false) && (characters.Count < expectedNumber))
+            if(isDisplayingOK == false)
             {
                 numberIndicator.text = string.Format("{0}/{1}", characters.Count, expectedNumber);
-                IsTriggered = false;
-            }
-            else if(IsTriggered == false)
-            {
-                numberIndicator.text = string.Format("{0}/{1}", characters.Count, expectedNumber);
-                audioCache.Audio.clip = exit;
-                audioCache.Play();
+                if((IsTriggered == true) && (characters.Count < expectedNumber))
+                {
+                    IsTriggered = false;
+                }
+                else if(IsTriggered == false)
+                {
+                    audioCache.Audio.clip = exit;
+                    audioCache.Play();
+                }
             }
         }
     }
