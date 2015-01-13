@@ -74,7 +74,8 @@ public class Switch : MonoBehaviour
     {
         isTriggered = true;
         triggerOnce = true;
-        numberIndicator.text = "-";
+        numberIndicator.text = "OK";
+        isDisplayingOK = true;
     }
 
     void Start()

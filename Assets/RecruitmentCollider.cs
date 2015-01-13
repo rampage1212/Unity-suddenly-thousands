@@ -10,6 +10,8 @@ public class RecruitmentCollider : MonoBehaviour
 
     void Update()
     {
+        // Reset rotation.
+        transform.rotation = Quaternion.identity;
         foreach(ThirdPersonUserControl controller in controls.allLivingCharacters)
         {
             if(controller.characterController.indicator == ThirdPersonCharacter.Indicator.Standby)
@@ -37,7 +39,7 @@ public class RecruitmentCollider : MonoBehaviour
     bool InRange(ThirdPersonUserControl controller)
     {
         distance = controls.target.position - controller.position;
-        distance.y = 0;
+        //distance.y = 0;
         return (distance.sqrMagnitude < (radius * radius));
     }
 }
