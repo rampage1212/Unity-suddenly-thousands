@@ -8,7 +8,7 @@ public class TriggerMessage : MonoBehaviour
 	
 	void Awake()
 	{
-		collider.isTrigger = true;
+		GetComponent<Collider>().isTrigger = true;
 	}
 	
 	public void OnTriggerEnter(Collider other)

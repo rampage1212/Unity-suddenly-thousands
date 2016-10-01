@@ -12,8 +12,8 @@ public class AutoRotateObject : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		animation.GetClip("idle1").wrapMode = WrapMode.Loop;
-		animation.Play("idle1");
+		GetComponent<Animation>().GetClip("idle1").wrapMode = WrapMode.Loop;
+		GetComponent<Animation>().Play("idle1");
 		
 		speed += Random.Range(-10.0f,10.0f);
 		rotating = true;

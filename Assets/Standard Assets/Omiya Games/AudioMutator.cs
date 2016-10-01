@@ -22,7 +22,7 @@ public class AudioMutator : MonoBehaviour
         {
             if(audioCache == null)
             {
-                audioCache = audio;
+                audioCache = GetComponent<AudioSource>();
             }
             return audioCache;
         }

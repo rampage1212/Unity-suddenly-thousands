@@ -22,8 +22,8 @@ public class MovableCube : MonoBehaviour
             {
                 labels[index].text = expectedNumber.ToString();
             }
-            originalMass = rigidbody.mass;
-            rigidbody.mass = Immovable;
+            originalMass = GetComponent<Rigidbody>().mass;
+            GetComponent<Rigidbody>().mass = Immovable;
         }
 	}
 	
@@ -34,7 +34,7 @@ public class MovableCube : MonoBehaviour
             controllers.Add(info.collider);
             if((expectedNumber > 0) && (controllers.Count >= expectedNumber))
             {
-                rigidbody.mass = originalMass;
+                GetComponent<Rigidbody>().mass = originalMass;
             }
         }
         else
@@ -50,7 +50,7 @@ public class MovableCube : MonoBehaviour
             controllers.Remove(info.collider);
             if((expectedNumber > 0) && (controllers.Count < expectedNumber))
             {
-                rigidbody.mass = Immovable;
+                GetComponent<Rigidbody>().mass = Immovable;
             }
         }
     }
