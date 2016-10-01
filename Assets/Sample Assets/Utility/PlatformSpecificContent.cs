@@ -1,91 +1,108 @@
-﻿using UnityEngine;
+using System;
+using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
-[ExecuteInEditMode]
 #endif
 
-public class PlatformSpecificContent : MonoBehaviour {
+namespace UnityStandardAssets.Utility
+{
+#if UNITY_EDITOR
 
-	enum BuildTargetGroup {
-		Standalone,
-		Mobile
-    }
+    [ExecuteInEditMode]
+#endif
+    public class PlatformSpecificContent : MonoBehaviour
+    {
+        private enum BuildTargetGroup
+        {
+            Standalone,
+            Mobile
+        }
 
-	[SerializeField] BuildTargetGroup showOnlyOn;
-	[SerializeField] GameObject[] content = new GameObject[0];
-	[SerializeField] bool childrenOfThisObject;
-    
-	#if !UNITY_EDITOR
+        [SerializeField] private BuildTargetGroup m_BuildTargetGroup;
+        [SerializeField] private GameObject[] m_Content = new GameObject[0];
+        [SerializeField] private MonoBehaviour[] m_MonoBehaviours = new MonoBehaviour[0];
+        [SerializeField] private bool m_ChildrenOfThisObject;
+
+#if !UNITY_EDITOR
 	void OnEnable()
 	{
 		CheckEnableContent();
 	}
-	#endif
+#endif
 
-	#if UNITY_EDITOR
-	
-    void OnEnable () {
-		EditorUserBuildSettings.activeBuildTargetChanged += Update;
-		EditorApplication.update += Update;
-    }
+#if UNITY_EDITOR
 
-    void OnDisable()
-    {
-		EditorUserBuildSettings.activeBuildTargetChanged -= Update;
-		EditorApplication.update -= Update;
-    }
+        private void OnEnable()
+        {
+            EditorUserBuildSettings.activeBuildTargetChanged += Update;
+            EditorApplication.update += Update;
+        }
 
-	void Update()
-    {
-		CheckEnableContent();
 
-    }
-	#endif
+        private void OnDisable()
+        {
+            EditorUserBuildSettings.activeBuildTargetChanged -= Update;
+            EditorApplication.update -= Update;
+        }
 
-    void CheckEnableContent()
-	{
-		#if (UNITY_IPHONE || UNITY_ANDROID || UNITY_WP8 || UNITY_BLACKBERRY )
-		if (showOnlyOn == BuildTargetGroup.Mobile)
+
+        private void Update()
+        {
+            CheckEnableContent();
+        }
+#endif
+
+
+        private void CheckEnableContent()
+        {
+#if (UNITY_IPHONE || UNITY_ANDROID || UNITY_WP8 || UNITY_TIZEN || UNITY_STV )
+		if (m_BuildTargetGroup == BuildTargetGroup.Mobile)
 		{
 			EnableContent(true);
 		} else {
 			EnableContent(false);
 		}
-		#endif
-		
-		#if !(UNITY_IPHONE || UNITY_ANDROID || UNITY_WP8 || UNITY_BLACKBERRY )
-		if (showOnlyOn == BuildTargetGroup.Mobile)
-		{
-            EnableContent(false);
-        } else {
-            EnableContent(true);
+#endif
+
+#if !(UNITY_IPHONE || UNITY_ANDROID || UNITY_WP8 || UNITY_TIZEN || UNITY_STV )
+            if (m_BuildTargetGroup == BuildTargetGroup.Mobile)
+            {
+                EnableContent(false);
+            }
+            else
+            {
+                EnableContent(true);
+            }
+#endif
         }
-        #endif
-        
+
+
+        private void EnableContent(bool enabled)
+        {
+            if (m_Content.Length > 0)
+            {
+                foreach (var g in m_Content)
+                {
+                    if (g != null)
+                    {
+                        g.SetActive(enabled);
+                    }
+                }
+            }
+            if (m_ChildrenOfThisObject)
+            {
+                foreach (Transform t in transform)
+                {
+                    t.gameObject.SetActive(enabled);
+                }
+            }
+            if (m_MonoBehaviours.Length > 0)
+            {
+                foreach (var monoBehaviour in m_MonoBehaviours)
+                {
+                    monoBehaviour.enabled = enabled;
+                }
+            }
+        }
     }
-
-	void EnableContent(bool enabled)
-	{
-		if (content.Length > 0)
-		{
-			foreach (var g in content)
-			{
-				if (g != null)
-				{
-					g.SetActive( enabled );
-				}
-			}
-		}
-		if (childrenOfThisObject)
-		{
-			foreach (Transform t in transform)
-			{
-				t.gameObject.SetActive( enabled );
-			}
-		}
-	}
-	
-
 }
-
-

@@ -1,14 +1,18 @@
-﻿using UnityEngine;
-using System.Collections;
+using System;
+using UnityEngine;
 
-public class FollowTarget : MonoBehaviour
+
+namespace UnityStandardAssets.Utility
 {
-	public Transform target;
-	public Vector3 offset = new Vector3(0f, 7.5f, 0f);
+    public class FollowTarget : MonoBehaviour
+    {
+        public Transform target;
+        public Vector3 offset = new Vector3(0f, 7.5f, 0f);
 
-	
-	void LateUpdate ()
-	{
-		transform.position = target.position + offset;
-	}
+
+        private void LateUpdate()
+        {
+            transform.position = target.position + offset;
+        }
+    }
 }
