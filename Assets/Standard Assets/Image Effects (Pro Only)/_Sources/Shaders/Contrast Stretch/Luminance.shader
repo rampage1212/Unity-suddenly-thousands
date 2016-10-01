@@ -10,19 +10,18 @@ Category {
 	SubShader {
 		Pass {
 			ZTest Always Cull Off ZWrite Off
-			Fog { Mode off }
 				
 CGPROGRAM
 #pragma vertex vert_img
 #pragma fragment frag
-#pragma fragmentoption ARB_precision_hint_fastest 
 #include "UnityCG.cginc"
 
 uniform sampler2D _MainTex;
+half4 _MainTex_ST;
 
 float4 frag (v2f_img i) : SV_Target
 {
-	float4 col = tex2D(_MainTex, i.uv);
+	float4 col = tex2D(_MainTex, UnityStereoScreenSpaceUVAdjust(i.uv, _MainTex_ST));
 	col.rgb = Luminance(col.rgb) * (1+col.a*2);
 	return col;
 }

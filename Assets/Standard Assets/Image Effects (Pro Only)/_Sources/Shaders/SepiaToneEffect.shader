@@ -6,19 +6,18 @@ Properties {
 SubShader {
 	Pass {
 		ZTest Always Cull Off ZWrite Off
-		Fog { Mode off }
 				
 CGPROGRAM
 #pragma vertex vert_img
 #pragma fragment frag
-#pragma fragmentoption ARB_precision_hint_fastest 
 #include "UnityCG.cginc"
 
 uniform sampler2D _MainTex;
+half4 _MainTex_ST;
 
 fixed4 frag (v2f_img i) : SV_Target
 {	
-	fixed4 original = tex2D(_MainTex, i.uv);
+	fixed4 original = tex2D(_MainTex, UnityStereoScreenSpaceUVAdjust(i.uv, _MainTex_ST));
 	
 	// get intensity value (Y part of YIQ color space)
 	fixed Y = dot (fixed3(0.299, 0.587, 0.114), original.rgb);

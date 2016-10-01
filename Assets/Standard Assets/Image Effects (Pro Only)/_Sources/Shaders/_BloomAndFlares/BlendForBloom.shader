@@ -22,7 +22,9 @@ Shader "Hidden/BlendForBloom" {
 	
 	half _Intensity;
 	half4 _ColorBuffer_TexelSize;
+	half4 _ColorBuffer_ST;
 	half4 _MainTex_TexelSize;
+	half4 _MainTex_ST;
 		
 	v2f vert( appdata_img v ) {
 		v2f o;
@@ -50,35 +52,35 @@ Shader "Hidden/BlendForBloom" {
 	}
 	
 	half4 fragScreen (v2f i) : SV_Target {
-		half4 addedbloom = tex2D(_MainTex, i.uv[0].xy) * _Intensity;
-		half4 screencolor = tex2D(_ColorBuffer, i.uv[1]);
+		half4 addedbloom = tex2D(_MainTex, UnityStereoScreenSpaceUVAdjust(i.uv[0].xy, _MainTex_ST)) * _Intensity;
+		half4 screencolor = tex2D(_ColorBuffer, UnityStereoScreenSpaceUVAdjust(i.uv[1], _ColorBuffer_ST));
 		return 1-(1-addedbloom)*(1-screencolor);
 	}
 
 	half4 fragScreenCheap(v2f i) : SV_Target {
-		half4 addedbloom = tex2D(_MainTex, i.uv[0].xy) * _Intensity;
-		half4 screencolor = tex2D(_ColorBuffer, i.uv[1]);
+		half4 addedbloom = tex2D(_MainTex, UnityStereoScreenSpaceUVAdjust(i.uv[0].xy, _MainTex_ST)) * _Intensity;
+		half4 screencolor = tex2D(_ColorBuffer, UnityStereoScreenSpaceUVAdjust(i.uv[1], _ColorBuffer_ST));
 		return 1-(1-addedbloom)*(1-screencolor);
 	}
 
 	half4 fragAdd (v2f i) : SV_Target {
-		half4 addedbloom = tex2D(_MainTex, i.uv[0].xy);
-		half4 screencolor = tex2D(_ColorBuffer, i.uv[1]);
+		half4 addedbloom = tex2D(_MainTex, UnityStereoScreenSpaceUVAdjust(i.uv[0].xy, _MainTex_ST));
+		half4 screencolor = tex2D(_ColorBuffer, UnityStereoScreenSpaceUVAdjust(i.uv[1], _ColorBuffer_ST));
 		return _Intensity * addedbloom + screencolor;
 	}
 
 	half4 fragAddCheap (v2f i) : SV_Target {
-		half4 addedbloom = tex2D(_MainTex, i.uv[0].xy);
-		half4 screencolor = tex2D(_ColorBuffer, i.uv[1]);
+		half4 addedbloom = tex2D(_MainTex, UnityStereoScreenSpaceUVAdjust(i.uv[0].xy, _MainTex_ST));
+		half4 screencolor = tex2D(_ColorBuffer, UnityStereoScreenSpaceUVAdjust(i.uv[1], _ColorBuffer_ST));
 		return _Intensity * addedbloom + screencolor;
 	}
 
 	half4 fragVignetteMul (v2f i) : SV_Target {
-		return tex2D(_MainTex, i.uv[0].xy) * tex2D(_ColorBuffer, i.uv[0]);
+		return tex2D(_MainTex, UnityStereoScreenSpaceUVAdjust(i.uv[0].xy, _MainTex_ST)) * tex2D(_ColorBuffer, UnityStereoScreenSpaceUVAdjust(i.uv[0], _ColorBuffer_ST));
 	}
 
 	half4 fragVignetteBlend (v2f i) : SV_Target {
-		return half4(1,1,1, tex2D(_ColorBuffer, i.uv[0]).r);
+		return half4(1,1,1, tex2D(_ColorBuffer, UnityStereoScreenSpaceUVAdjust(i.uv[0], _ColorBuffer_ST)).r);
 	}
 
 	half4 fragClear (v2f i) : SV_Target {
@@ -86,29 +88,29 @@ Shader "Hidden/BlendForBloom" {
 	}
 
 	half4 fragAddOneOne (v2f i) : SV_Target {
-		half4 addedColors = tex2D(_MainTex, i.uv[0].xy);
+		half4 addedColors = tex2D(_MainTex, UnityStereoScreenSpaceUVAdjust(i.uv[0].xy, _MainTex_ST));
 		return addedColors * _Intensity;
 	}
 
 	half4 frag1Tap (v2f i) : SV_Target {
-		return tex2D(_MainTex, i.uv[0].xy);
+		return tex2D(_MainTex, UnityStereoScreenSpaceUVAdjust(i.uv[0].xy, _MainTex_ST));
 	}
 	
 	half4 fragMultiTapMax (v2f_mt i) : SV_Target {
-		half4 outColor = tex2D(_MainTex, i.uv[4].xy);
-		outColor = max(outColor, tex2D(_MainTex, i.uv[0].xy));
-		outColor = max(outColor, tex2D(_MainTex, i.uv[1].xy));
-		outColor = max(outColor, tex2D(_MainTex, i.uv[2].xy));
-		outColor = max(outColor, tex2D(_MainTex, i.uv[3].xy));
+		half4 outColor = tex2D(_MainTex, UnityStereoScreenSpaceUVAdjust(i.uv[4].xy, _MainTex_ST));
+		outColor = max(outColor, tex2D(_MainTex, UnityStereoScreenSpaceUVAdjust(i.uv[0].xy, _MainTex_ST)));
+		outColor = max(outColor, tex2D(_MainTex, UnityStereoScreenSpaceUVAdjust(i.uv[1].xy, _MainTex_ST)));
+		outColor = max(outColor, tex2D(_MainTex, UnityStereoScreenSpaceUVAdjust(i.uv[2].xy, _MainTex_ST)));
+		outColor = max(outColor, tex2D(_MainTex, UnityStereoScreenSpaceUVAdjust(i.uv[3].xy, _MainTex_ST)));
 		return outColor;
 	}
 
 	half4 fragMultiTapBlur (v2f_mt i) : SV_Target {
 		half4 outColor = 0;
-		outColor += tex2D(_MainTex, i.uv[0].xy);
-		outColor += tex2D(_MainTex, i.uv[1].xy);
-		outColor += tex2D(_MainTex, i.uv[2].xy);
-		outColor += tex2D(_MainTex, i.uv[3].xy);
+		outColor += tex2D(_MainTex, UnityStereoScreenSpaceUVAdjust(i.uv[0].xy, _MainTex_ST));
+		outColor += tex2D(_MainTex, UnityStereoScreenSpaceUVAdjust(i.uv[1].xy, _MainTex_ST));
+		outColor += tex2D(_MainTex, UnityStereoScreenSpaceUVAdjust(i.uv[2].xy, _MainTex_ST));
+		outColor += tex2D(_MainTex, UnityStereoScreenSpaceUVAdjust(i.uv[3].xy, _MainTex_ST));
 		return outColor/4;
 	}
 
@@ -116,13 +118,11 @@ Shader "Hidden/BlendForBloom" {
 	
 Subshader {
 	  ZTest Always Cull Off ZWrite Off
-	  Fog { Mode off }  
 
  // 0: nicer & softer "screen" blend mode	  		  	
  Pass {    
 
       CGPROGRAM
-      #pragma fragmentoption ARB_precision_hint_fastest
       #pragma vertex vert
       #pragma fragment fragScreen
       ENDCG
@@ -132,7 +132,6 @@ Subshader {
  Pass {    
 
       CGPROGRAM
-      #pragma fragmentoption ARB_precision_hint_fastest
       #pragma vertex vert
       #pragma fragment fragAdd
       ENDCG
@@ -141,7 +140,6 @@ Subshader {
  Pass {    
 
       CGPROGRAM
-      #pragma fragmentoption ARB_precision_hint_fastest
       #pragma vertex vertMultiTap
       #pragma fragment fragMultiTapMax
       ENDCG
@@ -150,7 +148,6 @@ Subshader {
  Pass {    
 
       CGPROGRAM
-      #pragma fragmentoption ARB_precision_hint_fastest
       #pragma vertex vert
       #pragma fragment fragVignetteMul
       ENDCG
@@ -159,7 +156,6 @@ Subshader {
  Pass {    
 
       CGPROGRAM
-      #pragma fragmentoption ARB_precision_hint_fastest
       #pragma vertex vert
       #pragma fragment fragScreenCheap
       ENDCG
@@ -168,7 +164,6 @@ Subshader {
  Pass {    
 
       CGPROGRAM
-      #pragma fragmentoption ARB_precision_hint_fastest
       #pragma vertex vert
       #pragma fragment fragAddCheap
       ENDCG
@@ -177,7 +172,6 @@ Subshader {
  Pass {    
 
       CGPROGRAM
-      #pragma fragmentoption ARB_precision_hint_fastest
       #pragma vertex vertMultiTap
       #pragma fragment fragMultiTapBlur
       ENDCG
@@ -188,7 +182,6 @@ Subshader {
  	  Blend Zero SrcAlpha
 
       CGPROGRAM
-      #pragma fragmentoption ARB_precision_hint_fastest
       #pragma vertex vert
       #pragma fragment fragVignetteBlend
       ENDCG
@@ -197,7 +190,6 @@ Subshader {
  Pass {    
  	  
       CGPROGRAM
-      #pragma fragmentoption ARB_precision_hint_fastest
       #pragma vertex vert
       #pragma fragment fragClear
       ENDCG
@@ -208,7 +200,6 @@ Subshader {
  	  Blend One One
  	  
       CGPROGRAM
-      #pragma fragmentoption ARB_precision_hint_fastest
       #pragma vertex vert
       #pragma fragment fragAddOneOne
       ENDCG
@@ -220,7 +211,6 @@ Subshader {
  	  Blend One One
  	  
       CGPROGRAM
-      #pragma fragmentoption ARB_precision_hint_fastest
       #pragma vertex vert
       #pragma fragment frag1Tap
       ENDCG
